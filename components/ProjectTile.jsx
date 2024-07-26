@@ -66,7 +66,7 @@ export const ProjectTile = () => {
                   {project.longDesc}
                 </p>
               </div>
-              <div className="w-full mt-auto mb-2 flex flex-row h-f">
+              <div className="w-full mt-3 mb-2 flex flex-row h-f">
                 {project.tags.map((tag, index) => (
                   <div
                     key={index}
@@ -79,7 +79,7 @@ export const ProjectTile = () => {
                   {project.link && (
                     <a
                       href={project.link}
-                      className="border-[1px] text-xs md:text-sm h-fit border-black bg-black text-white hover:bg-[#33333317] rounded-2xl p-2  m-2 sm:m-6"
+                      className="border-[1px] text-xs md:text-sm h-fit border-black bg-black text-white hover:animate-none rounded-2l p-2  m-2 mr-0 sm:m-6 sm:mr-0 animate-pulse"
                     >
                       See More
                     </a>

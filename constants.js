@@ -3,6 +3,7 @@ import junaidImage from "./src/projects/junaid.png";
 import oneToTenImage from "./src/projects/1210.png";
 import weatherImage from "./src/projects/weather.png";
 import nikeImage from "./src/projects/nike.png";
+import newsletterclubImage from "./src/projects/newsletterclub.png";
 
 import capybaraImage from "/favourites/capybara.png";
 
@@ -144,6 +145,19 @@ export const contactInformation = [
 export const projects = [
   {
     key: "1",
+    name: "The Newsletter Club",
+    shortDesc:
+      "A full-stack newsletter growth platform, aimed at collaboration between newsletter owners.",
+    longDesc:
+      "An exclusive platform for newsletter owners to find and collaborate with other newsletter creators. The website features a comprehensive directory to search by category, monetization type, subscriber count, and more. This has been my first freelance project of this scale, and it was a delight to build from beginning to end.",
+    img: newsletterclubImage,
+    bgColor: "#7c3aed ",
+    link: "https://thenewsletterclub.co",
+    github: "",
+    tags: ["Vite", "Express"],
+  },
+  {
+    key: "2",
     name: "Trident Distributions",
     shortDesc:
       "A beautifully designed e-commerce website with account creation and a persistant local storage cart system.",
@@ -156,7 +170,7 @@ export const projects = [
     tags: ["NextJs", "CMS"],
   },
   {
-    key: "2",
+    key: "3",
     name: "Weather Application",
     shortDesc:
       "A responsive weather web application capable of displaying weather information for an inputted city.",
@@ -170,7 +184,7 @@ export const projects = [
     tags: ["Vite", "API"],
   },
   {
-    key: "3",
+    key: "4",
     name: "Junaid Adams - Past Portfolio",
     shortDesc:
       "A previous version of my portfolio. Modern asthetics with a softer, personal touch.",
@@ -184,7 +198,7 @@ export const projects = [
     tags: ["Vite", "ThreeJS"],
   },
   {
-    key: "4",
+    key: "5",
     name: "One to Ten",
     shortDesc:
       "A sleek, minimalist quiz game where all answers range from one to ten. Perfect for quick entertainment and challenging your quick-thinking skills!",
@@ -198,7 +212,7 @@ export const projects = [
     tags: ["Vite"],
   },
   {
-    key: "5",
+    key: "6",
     name: "Nike Mock Website",
     shortDesc:
       "A sleek Nike mock website made using Vite, with a mobile-first responsive design.",
@@ -206,7 +220,6 @@ export const projects = [
       "A sleek Nike mock website website made using Vite showcasing responsive design. This project was built during my time at School of IT and tought me what goes into making real-world product pages.",
     img: nikeImage,
     bgColor: "#fff",
-
     link: "",
     github: "www.example.com",
     tags: ["Vite", "Tailwind"],
