@@ -44,7 +44,7 @@ export default function Home() {
         <div className="lg:w-1/2 xl:w-3/5 w-3/4 h-full p-8 xl:p-3  m-auto justify-center">
           <img
             alt="Portrait Image"
-            src="/portraitmain.png"
+            src="./portraitmain.png"
             className="rounded-full sm:w-3/4 lg:w-2/3 mx-auto shadow-3xl"
           />
         </div>
