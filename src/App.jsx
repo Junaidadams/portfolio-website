@@ -6,9 +6,12 @@ import { Testimonial } from "../components/Testimonial";
 import { SongTile } from "../components/SongTile";
 import { Capybara } from "../components/Capybara";
 
+import useAnalytics from "./hooks/useAnalytics";
+
 import { Image } from "lucide-react";
 
 export default function Home() {
+  useAnalytics("/");
   return (
     <main className="min-h-screen w-full z-0 overflow-hidden flex flex-col bg-[#f5f5f5f5] -translate-y-[64px]">
       <section
