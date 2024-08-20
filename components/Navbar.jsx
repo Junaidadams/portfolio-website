@@ -59,7 +59,7 @@ const Navbar = () => {
           initial={{ opacity: 1, x: "-100%" }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="bg-hero-image md:hidden w-3/4 p-0 flex absolute inset-y-0 left-0 flex-col ab min-h-screen z-40"
+          className="bg-cyan-900 md:hidden w-3/4 p-0 flex absolute inset-y-0 left-0 flex-col ab min-h-screen z-40"
         >
           <div className="md:hidden w-full text-textmain hover:cursor-pointer flex flex-row-reverse">
             <div

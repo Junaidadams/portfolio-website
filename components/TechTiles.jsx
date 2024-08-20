@@ -1,6 +1,7 @@
 import { frontendTechnologies, backendTechnologies } from "../constants";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
+import { Redo } from "lucide-react";
 
 export const TechTiles = () => {
   return (
@@ -67,8 +68,23 @@ export const TechTiles = () => {
             </li>
           ))}
         </ul>
+        <div className="flex flex-row mt-4 ml-8">
+          <Redo
+            className="mt-auto animate-pulse"
+            color="#334155"
+            size={29}
+            strokeWidth={2}
+            style={{ transform: "rotate(-140deg)" }}
+          />
+          <p
+            style={{ transform: "rotate(0deg)" }}
+            className="text-slate-700 text-base pr-2 font-semibold font-dancing tracking-wider"
+          >
+            (Hover)
+          </p>
+        </div>
       </div>
-      <Tooltip id="my-tooltip" delayShow={600} />
+      <Tooltip id="my-tooltip" delayShow={300} />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 import { ProjectTile } from "../components/ProjectTile";
 import { TechTiles } from "../components/TechTiles";
 import { ContactTiles } from "../components/ContactTiles";
@@ -8,13 +8,14 @@ import { Capybara } from "../components/Capybara";
 
 import useAnalytics from "./hooks/useAnalytics";
 
-import { Image } from "lucide-react";
+import FlipLink from "../components/FlipLink";
+import { Redo } from "lucide-react";
 
 export default function Home() {
   useAnalytics("/");
   return (
     <main className="min-h-screen w-full z-0 overflow-hidden flex flex-col bg-[#f5f5f5f5] -translate-y-[64px]">
-      <section
+      {/* <section
         id="welcome"
         className="min-h-screen  bg-center lg:bg-left bg-cover bg-hero-image bg-no-repeat flex flex-row  mb-20"
       >
@@ -39,16 +40,43 @@ export default function Home() {
             <Image color="#999999" />
           </a>
         </div>
+      </section> */}
+      <section
+        id="welcome"
+        className="grid h-screen place-content-center gap-2 px-8 bg-gradient-to-r from-cyan-700 to-cyan-800"
+      >
+        <div className="flex flex-row">
+          <p
+            style={{ transform: "rotate(-5deg)" }}
+            className="text-white pr-2 font-dancing text-3xl tracking-wider"
+          >
+            (Hover)
+          </p>
+          <Redo
+            className="mt-auto animate-pulse"
+            color="white"
+            size={29}
+            strokeWidth={3}
+            style={{ transform: "rotate(45deg)" }}
+          />
+        </div>
+        <FlipLink subText="my">Junaid&apos;s</FlipLink>
+        <FlipLink subText="Design">full-stack</FlipLink>
+        <div className="">
+          <FlipLink subText="showcase.">Portfolio.</FlipLink>
+        </div>
       </section>
       <section
         id="about"
         className="min-h-screen bg-[#f5f5f5f5] mb-20 flex flex-col w-full xl:w-10/12 mx-auto xl:flex-row pb-12"
       >
         <div className="lg:w-1/2 xl:w-3/5 w-3/4 h-full p-8 xl:p-3  m-auto justify-center">
-          <img
+          <motion.img
+            transition={easeInOut}
+            whileHover={{ scale: 1.01 }}
             alt="Portrait Image"
             src="./portraitmain.png"
-            className="rounded-full sm:w-3/4 lg:w-2/3 mx-auto shadow-3xl"
+            className="rounded-full sm:w-3/4 lg:w-2/3 mx-auto shadow-4xl hover:shadow-3xl"
           />
         </div>
         <div className="m-auto w-3/4 xl:w-1/2 px-4 xl:px-2 py-12 justify-center lg:px-10">
@@ -80,7 +108,7 @@ export default function Home() {
                 href="https://www.schoolofit.co.za"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#0000eece] font-semibold"
+                className="text-blue-600 font-semibold"
               >
                 School of IT
               </a>
@@ -89,7 +117,7 @@ export default function Home() {
                 href="/favourites/certificate.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#0000eecb] font-semibold"
+                className="text-blue-600 font-semibold"
               >
                 here
               </a>
@@ -127,7 +155,7 @@ export default function Home() {
             achieve different goals and constantly expanding my understanding.
           </p>
         </motion.div>{" "}
-        <div className="2xl:w-2/5 w-full lg:h-screen mx-auto justify-center">
+        <div className="2xl:w-2/5 w-full lg:h-screen mx-auto justify-center flex flex-col">
           <ProjectTile />
         </div>
       </section>
@@ -158,7 +186,7 @@ export default function Home() {
               in.
             </p>
           </div>
-          <div className="my-4 mx-auto">
+          <div className="my-4 mx-auto flex flex-col">
             <TechTiles />
           </div>
         </motion.div>{" "}

@@ -1,12 +1,15 @@
 import { testimonials } from "../constants";
+import { easeInOut, motion } from "framer-motion";
 
 export const Testimonial = () => {
   return (
     <div className="">
       {testimonials.map((data, index) => (
-        <div
+        <motion.div
+          transition={easeInOut}
+          whileHover={{ scale: 1.02 }}
           key={index}
-          className="bg-slate-300 bg-texture-1  sm:my-6 my-4 mx-auto w-full py-4 px-6 sm:py-8 sm:px-10 rounded-3xl shadow-3xl"
+          className="bg-[#164e632c] bg-texture-1  sm:my-6 my-4 mx-auto w-full py-4 px-6 sm:py-8 sm:px-10 rounded-3xl shadow-3xl"
         >
           <div className="flex flex-col sm:flex-row">
             <div className="flex justify-center items-center w-fit h-fit p-1 bg-black mr-2 rounded-full my-auto shadow-2xl">
@@ -38,7 +41,7 @@ export const Testimonial = () => {
           <div className="text-xl  pt-3 font-poppins text-slate-800">
             {data.testimonial}
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
