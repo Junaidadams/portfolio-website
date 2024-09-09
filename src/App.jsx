@@ -4,7 +4,7 @@ import { TechTiles } from "../components/TechTiles";
 import { ContactTiles } from "../components/ContactTiles";
 import { Testimonial } from "../components/Testimonial";
 import { SongTile } from "../components/SongTile";
-import { Capybara } from "../components/Capybara";
+import { SubstackFeed } from "../components/SubstackFeed";
 
 import useAnalytics from "./hooks/useAnalytics";
 
@@ -15,32 +15,6 @@ export default function Home() {
   useAnalytics("/");
   return (
     <main className="min-h-screen w-full z-0 overflow-hidden flex flex-col bg-[#f5f5f5f5] -translate-y-[64px]">
-      {/* <section
-        id="welcome"
-        className="min-h-screen  bg-center lg:bg-left bg-cover bg-hero-image bg-no-repeat flex flex-row  mb-20"
-      >
-        <motion.div
-          className="flex h-full m-auto"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-        >
-          <h1 className="text-[#fff] font-light rounded-full lg:text-7xl p-6 bg-[#11111130] w-2/3 backdrop-blur-sm text-center justify-center mx-auto  text-2xl ">
-            I am Junaid Adams, a fullstack web developer.{" "}
-            <span className="font-poppins font-bold text-3xl lg:text-7xl">
-              Welcome to my portfolio.
-            </span>
-          </h1>
-        </motion.div>
-        <div className="flex-grow flex justify-end items-end">
-          <a
-            className="text-white mb-4 mr-4"
-            href="https://unsplash.com/photos/brown-cardboard-box-with-yellow-light-d2w-_1LJioQ?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash"
-          >
-            <Image color="#999999" />
-          </a>
-        </div>
-      </section> */}
       <section
         id="welcome"
         className="grid h-screen place-content-center gap-2 px-8 bg-gradient-to-r from-cyan-700 to-cyan-800"
@@ -249,7 +223,7 @@ export default function Home() {
             Had to include at least one of these little guys on my website.
             These are my absolute favourite animals.
           </p>
-          <Capybara />
+          <SubstackFeed />
         </div>
       </section>
       <section
