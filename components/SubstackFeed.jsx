@@ -12,9 +12,9 @@ export const SubstackFeed = () => {
       substackUrl: "junaidadams.substack.com", // Replace with your Substack URL
       posts: 1, // Number of posts to display
       colors: {
-        primary: "#404040", // Customize colors
-        secondary: "#808080",
-        background: "#FFFFFF",
+        primary: "#ea580c", // Customize colors
+        secondary: "#222222",
+        background: "#f5f5f5 ",
       },
     };
 
@@ -28,8 +28,7 @@ export const SubstackFeed = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Substack Feed</h1>
+    <div className="p-2 bg-[#333333]">
       <div id="substack-feed-embed"></div>
     </div>
   );
