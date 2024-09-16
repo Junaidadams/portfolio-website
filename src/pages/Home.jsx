@@ -38,7 +38,7 @@ const Home = () => {
         className="min-h-screen flex flex-col bg-gradient-to-br from-teal-700 to-teal-400"
       >
         <div className="m-auto bg-slate-100 rounded-sm p-8">
-          <h1 className="text-4xl font-black font-san uppercase sm:text-7xl  md:text-8xl  my-5 bg-gradient-to-t from-teal-700 to-teal-800 text-transparent bg-clip-text shadow-xl p-2">
+          <h1 className="text-4xl font-black font-san uppercase sm:text-7xl  md:text-8xl  my-5 bg-gradient-to-t from-teal-700 to-teal-800 text-transparent bg-clip-text shadow- text-center p-2">
             Pricing
           </h1>
           <div className="w-fit">

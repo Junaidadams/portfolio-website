@@ -423,7 +423,7 @@ export const pricingScheme = [
       "A five page website which you can customize to include any of the 5 pages in the options below.",
     cost: 5000,
     addOnPageCost: 1000,
-    addOnPageLimit: null,
+    addOnPageLimit: 0,
     retainerCost: 800,
     retainerHoursIncluded: 8,
     retainerServicesIncluded: [
@@ -432,6 +432,17 @@ export const pricingScheme = [
       "Google analytics reports",
       "Monthly site health check",
     ],
-    pageOptions: [""],
+    pageOptions: [
+      "Home",
+      "About",
+      "Contact",
+      "Faq",
+      "Services",
+      "Testimonials",
+      "Pricing",
+      "Projects",
+      "Portfolio",
+      "Blog",
+    ],
   },
 ];
