@@ -397,3 +397,41 @@ export const testimonials = [
     image: "https://upload.wikimedia.org/wikipedia/en/e/e1/Yuppiechef_Logo.png",
   },
 ];
+
+export const pricingScheme = [
+  {
+    key: 1,
+    name: "Single page website",
+    description:
+      "A single-page website with a navigation bar and footer. Maximum 4 sections.",
+    cost: 2200,
+    addOnPageCost: 700,
+    addOnPageLimit: 4,
+    retainerCost: 500,
+    retainerHoursIncluded: 4,
+    retainerServicesIncluded: [
+      "Minor content updates",
+      "Backups and security updates",
+      "Monthly site health checks",
+    ],
+    pageOptions: [""],
+  },
+  {
+    key: 2,
+    name: "Standard 5 Page website",
+    description:
+      "A five page website which you can customize to include any of the 5 pages in the options below.",
+    cost: 5000,
+    addOnPageCost: 1000,
+    addOnPageLimit: null,
+    retainerCost: 800,
+    retainerHoursIncluded: 8,
+    retainerServicesIncluded: [
+      "Content updates across multiple pages",
+      "Backups and security updates",
+      "Google analytics reports",
+      "Monthly site health check",
+    ],
+    pageOptions: [""],
+  },
+];

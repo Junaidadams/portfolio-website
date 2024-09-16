@@ -1,14 +1,15 @@
 import PropTypes from "prop-types";
 import { easeInOut, motion } from "framer-motion";
 
-const FlipLink = ({ children, subText }) => {
+const FlipLink = ({ children, subText, color }) => {
   const duration = 0.25;
   const stagger = 0.025;
   return (
     <motion.div
       initial="initial"
       whileHover="hovered"
-      className="relative block overflow-hidden whitespace-nowrap text-4xl font-black font-san uppercase sm:text-7xl md:text-8xl lg:text-9xl text-slate-100"
+      className="relative block overflow-hidden whitespace-nowrap text-4xl font-black font-san uppercase sm:text-7xl  md:text-8xl "
+      style={{ color: color || "#f1f5f9 " }}
     >
       <div>
         {children.split("").map((letter, index) => {
@@ -55,4 +56,5 @@ export default FlipLink;
 FlipLink.propTypes = {
   children: PropTypes.string,
   subText: PropTypes.string,
+  color: PropTypes.string,
 };
