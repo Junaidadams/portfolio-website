@@ -1,7 +1,9 @@
+import { useState } from "react";
 import FlipLink from "../../components/FlipLink";
 import Pricing from "../../components/Pricing";
 
 const Home = () => {
+  const [toggleRetainer, setToggleRetainer] = useState(false);
   return (
     <div className="">
       <section
@@ -23,10 +25,10 @@ const Home = () => {
               className=" bg-slate-100 flex space-x-2 md:space-x-8 w-fit px-2 md:px-8 sm:px-4 sm:py-2 rounded-full"
               href="#pricing"
             >
-              <FlipLink subText={"Get "} color={"red-50"}>
+              <FlipLink subText={"Get "} color={"#555"}>
                 Get
               </FlipLink>
-              <FlipLink subText={" Started"} color={"red-500"}>
+              <FlipLink subText={" Started"} color={"#555"}>
                 Started
               </FlipLink>
             </a>
@@ -37,12 +39,12 @@ const Home = () => {
         id="pricing"
         className="min-h-screen flex flex-col bg-gradient-to-br from-teal-700 to-teal-400"
       >
-        <div className="m-auto bg-slate-100 rounded-sm p-8">
+        <div className="m-auto bg-slate-100 rounded-sm p-4 sm:p-6 md:p-8">
           <h1 className="text-4xl font-black font-san uppercase sm:text-7xl  md:text-8xl  my-5 bg-gradient-to-t from-teal-700 to-teal-800 text-transparent bg-clip-text shadow- text-center p-2">
             Pricing
           </h1>
           <div className="w-fit">
-            <Pricing />
+            <Pricing toggleRetainer={toggleRetainer} />
           </div>
         </div>
       </section>

@@ -51,10 +51,10 @@ const FlipLink = ({ children, subText, color }) => {
   );
 };
 
-export default FlipLink;
-
 FlipLink.propTypes = {
   children: PropTypes.string,
   subText: PropTypes.string,
   color: PropTypes.string,
 };
+
+export default FlipLink;

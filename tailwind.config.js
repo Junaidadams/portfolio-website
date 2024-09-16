@@ -8,6 +8,7 @@ export default {
   theme: {
     extend: {
       boxShadow: {
+        "teal-lg": "0px 15px 80px -15px rgba(20, 170, 126, 0.2)", // Teal shadow
         "3xl": "0px 35px 120px -15px #211e35",
         "4xl": "0px 30px 120px -15px #211e35",
       },
