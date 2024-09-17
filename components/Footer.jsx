@@ -17,7 +17,7 @@ const Footer = () => {
           ))}
         </nav>
         <a
-          href="https://www.fullstack.so"
+          href="https://junaidadams.com/"
           className="mt-10 block text-center text-xs leading-5"
         >
           &copy; {new Date().getFullYear()} Junaid Adams. All rights reserved.
