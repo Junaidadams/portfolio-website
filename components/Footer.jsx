@@ -1,8 +1,8 @@
-import { footerConstants } from "../constants";
+import PropTypes from "prop-types";
 
-const Footer = () => {
+const Footer = ({ footerConstants, color }) => {
   return (
-    <footer className="border-t bg-[#f5f5f5]">
+    <footer className={`border-t ${color}`}>
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-12 sm:py-20 lg:px-8">
         <nav
           className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
@@ -25,5 +25,9 @@ const Footer = () => {
       </div>
     </footer>
   );
+};
+Footer.propTypes = {
+  footerConstants: PropTypes.array.isRequired,
+  color: PropTypes.string.isRequired,
 };
 export default Footer;

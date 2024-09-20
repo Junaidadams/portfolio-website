@@ -1,19 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-// import { Open_Sans } from "@fontsource/open-sans"; // Adjusted font import
-import {
-  X,
-  MoreVertical,
-  Lamp,
-  BookOpenText,
-  Hammer,
-  Cpu,
-  Phone,
-} from "lucide-react";
+import { X, MoreVertical } from "lucide-react";
 
-// const open_Sans = Open_Sans({ subsets: ["latin"] });
+import PropTypes from "prop-types";
 
-const Navbar = () => {
+const Navbar = ({ navbarConstants, color }) => {
   const [toggle, setToggle] = useState(false);
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
@@ -73,46 +64,19 @@ const Navbar = () => {
           {/* MOBILE NAV MENU */}
 
           <ul className="flex text-[#f5f5f5] flex-col h-full mr-auto ml-4 sm:ml-20">
-            <li className="text-center shadow-sm  hover:text-[#f5f5f5b3] pt-0">
-              <a href="#" onClick={() => setToggle(!toggle)}>
-                <div className=" text-2xl border-b-[1px] p-8 border-[#fff] flex-row flex antialiased cursor-pointer">
-                  <Lamp className="my-auto mr-6" />
-                  Home.
-                </div>
-              </a>
-            </li>
-            <li className="text-center shadow-sm  hover:text-[#f5f5f5b3]">
-              <a href="#about" onClick={() => setToggle(!toggle)}>
-                <div className=" text-2xl border-b-[1px] p-8 border-[#fff] flex-row flex antialiased cursor-pointer">
-                  <BookOpenText className="my-auto mr-6" />
-                  About Me.
-                </div>
-              </a>
-            </li>
-            <li className="text-center shadow-sm  hover:text-[#f5f5f5b3]">
-              <a href="#projects" onClick={() => setToggle(!toggle)}>
-                <div className=" text-2xl border-b-[1px] p-8 border-[#fff] flex-row flex antialiased cursor-pointer">
-                  <Hammer className="my-auto mr-6" />
-                  My Projects.
-                </div>
-              </a>
-            </li>
-            <li className="text-center shadow-sm  hover:text-[#f5f5f5b3]">
-              <a href="#technologies" onClick={() => setToggle(!toggle)}>
-                <div className=" text-2xl border-b-[1px] px-6 py-8 border-[#fff] flex-row flex antialiased cursor-pointer">
-                  <Cpu className="my-auto mr-6" />
-                  What I Use.
-                </div>
-              </a>
-            </li>
-            <li className="text-center shadow-sm  hover:text-[#f5f5f5b3]">
-              <a href="#contact" onClick={() => setToggle(!toggle)}>
-                <div className=" text-2xl border-b-[1px] p-8 border-[#fff] flex-row flex antialiased cursor-pointer">
-                  <Phone className="my-auto mr-6" />
-                  Contact Me.
-                </div>
-              </a>
-            </li>
+            {navbarConstants.map((item, index) => (
+              <li
+                key={index}
+                className="text-center shadow-sm hover:text-[#f5f5f5b3]"
+              >
+                <a href={item.href} onClick={() => setToggle(!toggle)}>
+                  <div className="text-2xl border-b-[1px] p-8 border-[#fff] flex-row flex antialiased cursor-pointer">
+                    <item.icon className="my-auto mr-6" />
+                    {item.label}
+                  </div>
+                </a>
+              </li>
+            ))}
           </ul>
         </motion.div>
       )}
@@ -131,40 +95,26 @@ const Navbar = () => {
           </div>
         )}
       </div>
-
       <ul
         className={`${
           scrollPercentage > 15 ? "text-[#2D3142]" : "text-[#f5f5f5]"
-        } md:flex text-lg md:text-lg font-normal  lg:space-x-8 md:space-x-4 mr-12 hidden `}
+        } md:flex text-lg md:text-lg font-normal lg:space-x-8 md:space-x-4 mr-12 hidden`}
       >
-        <li className="">
-          <a href="#">
-            <div className="antialiased cursor-pointer">Home</div>
-          </a>
-        </li>
-        <li>
-          <a href="#about">
-            <div className=" antialiased cursor-pointer">About Me</div>
-          </a>
-        </li>
-        <li>
-          <a href="#projects">
-            <div className="antialiased cursor-pointer">My Projects</div>
-          </a>
-        </li>
-        <li>
-          <a href="#technologies">
-            <div className="antialiased cursor-pointer">What I use</div>
-          </a>
-        </li>
-        <li>
-          <a href="#contact">
-            <div className="antialiased cursor-pointer">Contact Me</div>
-          </a>
-        </li>
+        {navbarConstants.map((item, index) => (
+          <li key={index}>
+            <a href={item.href}>
+              <div className="antialiased cursor-pointer">{item.label}</div>
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  navbarConstants: PropTypes.array.isRequired,
+  color: PropTypes.string.isRequired,
 };
 
 export default Navbar;

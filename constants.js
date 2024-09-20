@@ -5,6 +5,19 @@ import weatherImage from "./src/projects/weather.png";
 import nikeImage from "./src/projects/nike.png";
 import newsletterclubImage from "./src/projects/newsletterclub.png";
 
+import {
+  Lamp,
+  BookOpenText,
+  Hammer,
+  Cpu,
+  Phone,
+  DollarSignIcon,
+  Palette,
+  BoxIcon,
+  PlusCircleIcon,
+  Pointer,
+} from "lucide-react";
+
 import capybaraImage from "/favourites/capybara.png";
 
 import githubIcon from "./src/contacticons/github.png";
@@ -355,14 +368,58 @@ export const backendTechnologies = [
   },
 ];
 
-export const footerConstants = [
+export const navbarConstants1 = [
+  {
+    href: "#",
+    label: "Home",
+    icon: Lamp,
+  },
+  {
+    href: "#about",
+    label: "About Me",
+    icon: BookOpenText,
+  },
+  {
+    href: "#projects",
+    label: "My Projects",
+    icon: Hammer,
+  },
+  {
+    href: "#technologies",
+    label: "What I Use",
+    icon: Cpu,
+  },
+  {
+    href: "#contact",
+    label: "Contact Me",
+    icon: Phone,
+  },
+];
+
+export const navbarConstants2 = [
+  { label: "Home", href: "#", icon: Lamp },
+  { label: "Pricing", href: "#pricing", icon: DollarSignIcon },
+  { label: "Portfolio", href: "#portfolio", icon: Palette },
+];
+
+export const footerConstants1 = [
   { name: "Home", href: "/" },
   { name: "Contact", href: "#contact" },
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
   { name: "Technologies", href: "#technologies" },
   // {
-  //   name: <Linkedin />,
+  //   name: LinkedinIcon,
+  //   href: "https://www.linkedin.com//",
+  // },
+];
+
+export const footerConstants2 = [
+  { name: "Home", href: "/" },
+  { name: "Pricing", href: "#pricing" },
+
+  // {
+  //   name: LinkedinIcon,
   //   href: "https://www.linkedin.com//",
   // },
 ];
@@ -455,5 +512,34 @@ export const pricingScheme = [
       "Portfolio",
       "Blog",
     ],
+  },
+];
+
+export const steps = [
+  {
+    key: 1,
+    name: "Package selection",
+    description: "Choose one of the packages down below.",
+    link: "#pricing",
+    address: "",
+    icon: BoxIcon,
+  },
+  {
+    key: 2,
+    name: "Add-ons",
+    description:
+      "Decide on whether or not there are any extras that you would like added (additional pages, retainer service, etc).",
+    link: "#pricing",
+    address: "",
+    icon: PlusCircleIcon,
+  },
+  {
+    key: 3,
+    name: "Finalise",
+    description:
+      "Add your options to the contact form below and hit send! Also feel free to reach out to me at:",
+    link: "",
+    address: "junaidadams117@gmail.com",
+    icon: Pointer,
   },
 ];

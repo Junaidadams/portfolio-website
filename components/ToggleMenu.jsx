@@ -45,7 +45,7 @@ const ToggleMenu = ({ menuItems = [], name }) => {
       <motion.button
         whileTap={{ scale: 0.97 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full px-4 py-2 bg-gradient-to-r from-teal-600 to-teal-500 text-white font-semibold rounded-sm focus:outline-none"
+        className="flex items-center justify-between w-full px-4 py-2 bg-gradient-to-r from-teal-600 to-teal-500 text-white font-semibold rounded-sm focus:outline-none hover:from-teal-700 hover:to-teal-600"
       >
         {name}
         <motion.div
