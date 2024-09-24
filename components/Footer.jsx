@@ -28,6 +28,6 @@ const Footer = ({ footerConstants, color }) => {
 };
 Footer.propTypes = {
   footerConstants: PropTypes.array.isRequired,
-  color: PropTypes.string.isRequired,
+  color: PropTypes.string,
 };
 export default Footer;

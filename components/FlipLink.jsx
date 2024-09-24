@@ -4,6 +4,7 @@ import { easeInOut, motion } from "framer-motion";
 const FlipLink = ({ children, subText, color }) => {
   const duration = 0.25;
   const stagger = 0.025;
+
   return (
     <motion.div
       initial="initial"
@@ -52,8 +53,8 @@ const FlipLink = ({ children, subText, color }) => {
 };
 
 FlipLink.propTypes = {
-  children: PropTypes.string,
-  subText: PropTypes.string,
+  children: PropTypes.string.isRequired,
+  subText: PropTypes.string.isRequired,
   color: PropTypes.string,
 };
 

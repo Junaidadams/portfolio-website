@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import emailjs from "emailjs-com";
-import { pricingScheme } from "./pricingScheme"; // Import the pricing scheme array
+import { pricingScheme } from "../constants"; // Import the pricing scheme array
 
 const QuoteForm = () => {
   const [selectedPackage, setSelectedPackage] = useState("");
   const [selectedPages, setSelectedPages] = useState([]);
   const [message, setMessage] = useState("");
+  const [includeRetainer, setIncludeRetainer] = useState(false); // New state for retainer
 
   const handleSendEmail = (e) => {
     e.preventDefault();
@@ -13,6 +14,7 @@ const QuoteForm = () => {
     const templateParams = {
       selected_package: selectedPackage,
       selected_pages: selectedPages.join(", "),
+      include_retainer: includeRetainer ? "Yes" : "No", // Include retainer option
       message,
     };
 
@@ -25,21 +27,40 @@ const QuoteForm = () => {
       )
       .then(
         (result) => {
-          alert("Quote sent successfully!");
+          alert("Quote sent successfully!" + result);
         },
         (error) => {
-          alert("An error occurred. Please try again.");
+          alert("An error occurred. Please try again." + error);
         }
       );
   };
 
+  const handlePageSelection = (e) => {
+    const selectedOptions = Array.from(
+      e.target.selectedOptions,
+      (option) => option.value
+    );
+    const maxPages =
+      pricingScheme.find((scheme) => scheme.name === selectedPackage)
+        ?.addOnPageLimit || Infinity;
+
+    if (selectedOptions.length > maxPages) {
+      alert(`You can only select up to ${maxPages} pages for this package.`);
+      return;
+    }
+
+    setSelectedPages(selectedOptions);
+  };
+
   return (
     <div className="max-w-lg mx-auto p-4">
-      <h2 className="text-xl font-bold mb-4">Request a Quote</h2>
       <form onSubmit={handleSendEmail} className="space-y-4">
         {/* Dropdown for selecting a package */}
         <div>
-          <label htmlFor="package" className="block font-semibold mb-2">
+          <label
+            htmlFor="package"
+            className="w-full text-center text-teal-900 mx-auto text-lg md:text-xl font-montserrat font-bold"
+          >
             Select a Package
           </label>
           <select
@@ -62,19 +83,24 @@ const QuoteForm = () => {
 
         {/* Dropdown for selecting pages */}
         <div>
-          <label htmlFor="pages" className="block font-semibold mb-2">
-            Select Pages (Ctrl/Cmd + Click for multiple)
+          <label
+            htmlFor="pages"
+            className="w-full text-center text-teal-900 mx-auto text-lg md:text-xl font-montserrat font-bold"
+          >
+            Select{" "}
+            {pricingScheme.find(
+              (scheme) => scheme.name === selectedPackage && scheme.key === 1
+            )
+              ? "sections"
+              : "pages"}{" "}
           </label>
+          <p className="pb-1 font-montserrat "> (Ctrl + Click for multiple)</p>
           <select
             id="pages"
             className="w-full p-2 border rounded"
             multiple
             value={selectedPages}
-            onChange={(e) =>
-              setSelectedPages(
-                Array.from(e.target.selectedOptions, (option) => option.value)
-              )
-            }
+            onChange={handlePageSelection} // Updated handler
             required
           >
             {pricingScheme
@@ -87,11 +113,35 @@ const QuoteForm = () => {
           </select>
         </div>
 
+        {/* Retainer checkbox with monthly cost */}
+        {selectedPackage && (
+          <div>
+            <label className="block font-semibold mb-2">
+              <input
+                type="checkbox"
+                className="mr-2"
+                checked={includeRetainer}
+                onChange={(e) => setIncludeRetainer(e.target.checked)}
+              />
+              Include Retainer Service (R
+              {
+                pricingScheme.find((scheme) => scheme.name === selectedPackage)
+                  ?.retainerCost
+              }
+              /month)
+            </label>
+          </div>
+        )}
+
         {/* Optional message field */}
         <div>
-          <label htmlFor="message" className="block font-semibold mb-2">
+          <label
+            htmlFor="message"
+            className="w-full text-center text-teal-900 mx-auto text-lg md:text-xl font-montserrat font-bold"
+          >
             Additional Details
           </label>
+          <p className="pb-1 font-montserrat "> (add extra pages here)</p>
           <textarea
             id="message"
             className="w-full p-2 border rounded"
@@ -103,7 +153,7 @@ const QuoteForm = () => {
 
         <button
           type="submit"
-          className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+          className="bg-gradient-to-t to-teal-800 from-teal-900 text-white p-2 rounded hover:from-teal-800 hover:to-teal-700 transition-all shadow-teal-lg hover:shadow-xl"
         >
           Send Quote Request
         </button>

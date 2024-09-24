@@ -72,7 +72,7 @@ const Home = () => {
         </div>
       </section>
       <section
-        id="form"
+        id="pricing"
         className="min-h-screen flex flex-col bg-gradient-to-tr from-teal-700 to-teal-400"
       >
         <div className="m-auto bg-gradient-to-tr from-slate-100 to-white rounded-lg p-4 sm:p-6 md:p-8">
@@ -94,12 +94,12 @@ const Home = () => {
         </div>
       </section>
       <section
-        id="form"
-        className="min-h-screen flex flex-col bg-gradient-to-tr from-teal-700 to-teal-400"
+        id="quote"
+        className="min-h-screen flex flex-col bg-gradient-to-br from-teal-700 to-teal-400"
       >
         <div className="m-auto bg-gradient-to-tr from-slate-100 to-white rounded-lg p-4 sm:p-6 md:p-8">
           <h1 className="text-5xl font-black font-san uppercase sm:text-7xl  md:text-8xl  my-5 bg-gradient-to-t from-teal-700 to-teal-800 text-transparent bg-clip-text shadow- text-center p-2">
-            Specifications
+            Quote
           </h1>
           <motion.div
             initial={{ opacity: 0 }}

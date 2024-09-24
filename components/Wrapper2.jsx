@@ -9,7 +9,7 @@ const Wrapper = ({ children }) => {
       <Navbar color="" navbarConstants={navbarConstants2} />
       {children}
       <Footer
-        color="bg-gradient-to-br from-teal-700 to-teal-400"
+        color="bg-gradient-to-tr from-teal-700 to-teal-400"
         footerConstants={footerConstants2}
       />
     </div>

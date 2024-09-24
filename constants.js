@@ -16,6 +16,8 @@ import {
   BoxIcon,
   PlusCircleIcon,
   Pointer,
+  FormInput,
+  InfoIcon,
 } from "lucide-react";
 
 import capybaraImage from "/favourites/capybara.png";
@@ -398,8 +400,10 @@ export const navbarConstants1 = [
 
 export const navbarConstants2 = [
   { label: "Home", href: "#", icon: Lamp },
+  { label: "Info", href: "#information", icon: InfoIcon },
   { label: "Pricing", href: "#pricing", icon: DollarSignIcon },
-  { label: "Portfolio", href: "#portfolio", icon: Palette },
+  { label: "Quote", href: "#quote", icon: FormInput },
+  { label: "Portfolio", href: "/portfolio", icon: Palette },
 ];
 
 export const footerConstants1 = [
@@ -491,7 +495,7 @@ export const pricingScheme = [
       "A five page website which you can customize to include any of the 5 pages in the options below.",
     cost: 5000,
     addOnPageCost: 1000,
-    addOnPageLimit: 0,
+    addOnPageLimit: 15,
     retainerCost: 800,
     retainerHoursIncluded: 8,
     retainerServicesIncluded: [
