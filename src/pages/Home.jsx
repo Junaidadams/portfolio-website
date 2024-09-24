@@ -4,6 +4,7 @@ import FlipLink from "../../components/FlipLink";
 import Pricing from "../../components/Pricing";
 import Steps from "../../components/Steps";
 import QuoteForm from "../../components/QuoteForm";
+import ContactForm from "../../components/ContactForm";
 
 const Home = () => {
   // eslint-disable-next-line no-unused-vars
@@ -53,7 +54,7 @@ const Home = () => {
         id="information"
         className="min-h-screen flex flex-col bg-gradient-to-br from-teal-700 to-teal-400"
       >
-        <div className="m-auto bg-gradient-to-tr from-slate-100 to-white rounded-lg p-4 sm:p-6 md:p-8">
+        <div className="m-auto bg-gradient-to-tr from-slate-100 to-white md:rounded-lg p-4 sm:p-6 md:p-8">
           <h1 className="text-5xl font-black font-san uppercase sm:text-7xl  md:text-8xl  my-5 bg-gradient-to-t from-teal-700 to-teal-800 text-transparent bg-clip-text shadow- text-center p-2">
             Process
           </h1>
@@ -75,7 +76,7 @@ const Home = () => {
         id="pricing"
         className="min-h-screen flex flex-col bg-gradient-to-tr from-teal-700 to-teal-400"
       >
-        <div className="m-auto bg-gradient-to-tr from-slate-100 to-white rounded-lg p-4 sm:p-6 md:p-8">
+        <div className="m-auto bg-gradient-to-tr from-slate-100 to-white md:rounded-lg p-4 sm:p-6 md:p-8">
           <h1 className="text-5xl font-black font-san uppercase sm:text-7xl  md:text-8xl  my-5 bg-gradient-to-t from-teal-700 to-teal-800 text-transparent bg-clip-text shadow- text-center p-2">
             Pricing
           </h1>
@@ -97,7 +98,7 @@ const Home = () => {
         id="quote"
         className="min-h-screen flex flex-col bg-gradient-to-br from-teal-700 to-teal-400"
       >
-        <div className="m-auto bg-gradient-to-tr from-slate-100 to-white rounded-lg p-4 sm:p-6 md:p-8">
+        <div className="m-auto bg-gradient-to-tr from-slate-100 to-white md:rounded-lg p-4 sm:p-6 md:p-8">
           <h1 className="text-5xl font-black font-san uppercase sm:text-7xl  md:text-8xl  my-5 bg-gradient-to-t from-teal-700 to-teal-800 text-transparent bg-clip-text shadow- text-center p-2">
             Quote
           </h1>
@@ -109,9 +110,11 @@ const Home = () => {
               duration: 1,
               x: { duration: 1 },
             }}
-            className="w-fit"
+            className="w-fit flex flex-col lg:flex-row space-y-4 lg:space-y-0 space-x-0 lg:space-x-8"
           >
             <QuoteForm />
+            <p className="font-montserrat font-semibold text-lg m-auto">or</p>
+            <ContactForm />
           </motion.div>
         </div>
       </section>

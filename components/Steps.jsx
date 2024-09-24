@@ -10,13 +10,13 @@ const Steps = () => {
       {steps.map((step) => (
         <div key={step.key} className="w-full">
           <motion.div
-            className="flex md:p-4 hover:cursor-pointer my-2"
+            className="flex md:p-4 hover:cursor-pointer my-2 flex-col sm:flex-row"
             onHoverStart={() => setHoveredKey(step.key)} // Set the hovered key
             onHoverEnd={() => setHoveredKey(null)} // Reset on hover end
             whileHover={{ scale: 1.1 }}
           >
             <motion.div
-              className="w-fit ml-auto my-auto"
+              className="w-fit m-auto my-6 sm:my-auto sm:ml-auto sm:mr-0"
               animate={hoveredKey === step.key ? { y: [-3, 3, -3] } : { y: 0 }} // Only animate the hovered step
               transition={{
                 repeat: hoveredKey === step.key ? Infinity : 0,
