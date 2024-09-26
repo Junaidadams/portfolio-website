@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-const Footer = ({ footerConstants, color }) => {
+const Footer = ({ footerConstants, color, textColor }) => {
   return (
-    <footer className={`border-t ${color}`}>
+    <footer style={{ color: textColor }} className={`border-t ${color}`}>
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-12 sm:py-20 lg:px-8">
         <nav
           className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
@@ -29,5 +29,6 @@ const Footer = ({ footerConstants, color }) => {
 Footer.propTypes = {
   footerConstants: PropTypes.array.isRequired,
   color: PropTypes.string,
+  textColor: PropTypes.string,
 };
 export default Footer;

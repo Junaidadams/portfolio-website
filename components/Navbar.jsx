@@ -4,7 +4,7 @@ import { X, MoreVertical } from "lucide-react";
 
 import PropTypes from "prop-types";
 
-const Navbar = ({ navbarConstants, color }) => {
+const Navbar = ({ navbarConstants, scrollPercentageSwitch }) => {
   const [toggle, setToggle] = useState(false);
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
@@ -87,7 +87,9 @@ const Navbar = ({ navbarConstants, color }) => {
         {!toggle && (
           <div
             className={`md:hidden ${
-              scrollPercentage > 16 ? "text-[#2d3842]" : "text-[#f5f5f5]"
+              scrollPercentage > scrollPercentageSwitch
+                ? "text-[#000000]"
+                : "text-[#f5f5f5]"
             } hover:cursor-pointer p-3  rounded-full`}
             onClick={() => setToggle(!toggle)}
           >
@@ -97,7 +99,9 @@ const Navbar = ({ navbarConstants, color }) => {
       </div>
       <ul
         className={`${
-          scrollPercentage > 15 ? "text-[#2D3142]" : "text-[#f5f5f5]"
+          scrollPercentage > scrollPercentageSwitch
+            ? "text-[#000000]"
+            : "text-[#f5f5f5]"
         } md:flex text-lg md:text-lg font-normal lg:space-x-8 md:space-x-4 mr-12 hidden`}
       >
         {navbarConstants.map((item, index) => (
@@ -114,7 +118,7 @@ const Navbar = ({ navbarConstants, color }) => {
 
 Navbar.propTypes = {
   navbarConstants: PropTypes.array.isRequired,
-  color: PropTypes.string.isRequired,
+  scrollPercentageSwitch: PropTypes.number.isRequired,
 };
 
 export default Navbar;

@@ -6,9 +6,9 @@ import { navbarConstants1, footerConstants1 } from "../constants";
 const Wrapper = ({ children }) => {
   return (
     <div>
-      <Navbar navbarConstants={navbarConstants1} />
+      <Navbar scrollPercentageSwitch={15} navbarConstants={navbarConstants1} />
       {children}
-      <Footer footerConstants={footerConstants1} />
+      <Footer color="bg-[#f5f5f5]" footerConstants={footerConstants1} />
     </div>
   );
 };

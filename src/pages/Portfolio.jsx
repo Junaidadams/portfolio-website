@@ -14,7 +14,7 @@ import { Redo } from "lucide-react";
 export default function Portfolio() {
   useAnalytics("/portfolio");
   return (
-    <main className="min-h-screen w-full z-0 overflow-hidden flex flex-col bg-[#f5f5f5f5] -translate-y-[64px]">
+    <main className="min-h-screen w-full z-0 overflow-hidden flex flex-col bg-[#f5f5f5f5] -mt-16">
       <section
         id="welcome"
         className="grid h-screen place-content-center gap-2 px-8 bg-gradient-to-r from-cyan-700 to-cyan-800"
@@ -219,13 +219,13 @@ export default function Portfolio() {
           <h2 className="text-4xl font-poppins my-10 text-[#26292b] font-black">
             My Newsletter &quot;npm run dev&quot;
           </h2>
-          <p className="lg:text-2xl mb-8 font-poppins text-2xl text-[#444]">
+          <p className="lg:text-2xl mb-8 font-poppins text-2xl text-[#333]">
             I have a free weekly newsletter on{" "}
             <a href="https://substack.com/home" className="text-orange-600">
               Substack
             </a>{" "}
-            about my day to day worklife and current projects. Here is my most
-            recent post!
+            about my day to day worklife and current projects. Here are three of
+            my most recent posts!
           </p>
           <SubstackFeed />
         </div>
