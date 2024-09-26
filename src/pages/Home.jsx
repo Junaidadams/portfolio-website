@@ -100,7 +100,7 @@ const Home = () => {
       >
         <div className="m-auto bg-gradient-to-tr from-slate-100 to-white md:rounded-lg p-4 sm:p-6 md:p-8">
           <h1 className="text-5xl font-black font-san uppercase sm:text-7xl  md:text-8xl  my-5 bg-gradient-to-t from-teal-700 to-teal-800 text-transparent bg-clip-text shadow- text-center p-2">
-            Quote
+            Contact
           </h1>
           <motion.div
             initial={{ opacity: 0 }}
@@ -110,11 +110,22 @@ const Home = () => {
               duration: 1,
               x: { duration: 1 },
             }}
-            className="w-fit flex flex-col lg:flex-row space-y-4 lg:space-y-0 space-x-0 lg:space-x-8"
+            className="w-fit flex flex-col p-4 md:flex-row space-y-4 lg:space-y-0 space-x-0 lg:space-x-8"
           >
-            <QuoteForm />
-            <p className="font-montserrat font-semibold text-lg m-auto">or</p>
-            <ContactForm />
+            <div className="w-1/2">
+              <QuoteForm />
+            </div>
+
+            {/* Wrapper div to center the <p> */}
+            <div className="flex items-center">
+              <p className="font-montserrat font-semibold text-xl h-fit text-teal-700 m-auto">
+                or
+              </p>
+            </div>
+
+            <div className="w-1/2">
+              <ContactForm />
+            </div>
           </motion.div>
         </div>
       </section>

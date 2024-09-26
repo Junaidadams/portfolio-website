@@ -53,19 +53,20 @@ const QuoteForm = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-4">
+    <div className=" md:mx-2 p-5 shadow-teal-lg">
       <form onSubmit={handleSendEmail} className="space-y-4">
         {/* Dropdown for selecting a package */}
-        <div>
+        <h2 className="text-gray-700 font-bold text-2xl">Get Quoted</h2>
+        <div className="space-y-3">
           <label
             htmlFor="package"
-            className="w-full text-center text-teal-900 mx-auto text-lg md:text-xl font-montserrat font-bold"
+            className="w-full  text-teal-900 mx-auto text-lg md:text-xl font-montserrat "
           >
             Select a Package
           </label>
           <select
             id="package"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded focus:outline-none focus:ring-gray-400 focus:border-gray-400 shadow-sm focus:shadow"
             value={selectedPackage}
             onChange={(e) => setSelectedPackage(e.target.value)}
             required
@@ -82,22 +83,48 @@ const QuoteForm = () => {
         </div>
 
         {/* Dropdown for selecting pages */}
-        <div>
-          <label
-            htmlFor="pages"
-            className="w-full text-center text-teal-900 mx-auto text-lg md:text-xl font-montserrat font-bold"
-          >
-            Select{" "}
-            {pricingScheme.find(
-              (scheme) => scheme.name === selectedPackage && scheme.key === 1
-            )
-              ? "sections"
-              : "pages"}{" "}
-          </label>
-          <p className="pb-1 font-montserrat "> (Ctrl + Click for multiple)</p>
+        <div className="space-y-3">
+          <div>
+            <label
+              htmlFor="pages"
+              className="w-full  text-teal-900 mx-auto text-lg md:text-xl font-montserrat "
+            >
+              Select{" "}
+              {pricingScheme.find(
+                (scheme) => scheme.name === selectedPackage && scheme.key === 1
+              )
+                ? "sections"
+                : "pages"}{" "}
+            </label>
+            <div>
+              <p className="pb-1 font-montserrat ">
+                {" "}
+                (Ctrl + Click for multiple)
+              </p>
+              <p className="pb-1 font-montserrat animate-pulse">
+                {(() => {
+                  const scheme = pricingScheme.find(
+                    (scheme) =>
+                      scheme.name === selectedPackage && scheme.key === 1
+                  );
+                  return scheme
+                    ? `Choose up to ${scheme.basePagesOrSections} sections, add up to ${scheme.addOnPageLimit} pages at R${scheme.addOnPageCost}/page by including it in the additional details`
+                    : `Choose up to ${
+                        pricingScheme.find(
+                          (scheme) => scheme.name === selectedPackage
+                        )?.basePagesOrSections
+                      } pages, additional pages are charged at R${
+                        pricingScheme.find(
+                          (scheme) => scheme.name === selectedPackage
+                        )?.addOnPageCost
+                      }`;
+                })()}
+              </p>
+            </div>
+          </div>
           <select
             id="pages"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded focus:outline-none focus:ring-gray-400 focus:border-gray-400 shadow-sm focus:shadow"
             multiple
             value={selectedPages}
             onChange={handlePageSelection} // Updated handler
@@ -116,8 +143,12 @@ const QuoteForm = () => {
         {/* Retainer checkbox with monthly cost */}
         {selectedPackage && (
           <div>
-            <label className="block font-semibold mb-2">
+            <label
+              htmlFor="retainerPackage"
+              className="block font-semibold mb-2"
+            >
               <input
+                id="retainerPackage"
                 type="checkbox"
                 className="mr-2"
                 checked={includeRetainer}
@@ -134,20 +165,22 @@ const QuoteForm = () => {
         )}
 
         {/* Optional message field */}
-        <div>
-          <label
-            htmlFor="message"
-            className="w-full text-center text-teal-900 mx-auto text-lg md:text-xl font-montserrat font-bold"
-          >
-            Additional Details
-          </label>
-          <p className="pb-1 font-montserrat "> (add extra pages here)</p>
+        <div className="space-y-3">
+          <div>
+            <label
+              htmlFor="message"
+              className="w-full  text-teal-900 mx-auto text-lg md:text-xl font-montserrat "
+            >
+              Additional Details
+            </label>
+            <p className="pb-1 font-montserrat "> (add extra pages here)</p>
+          </div>
           <textarea
             id="message"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded focus:outline-none focus:ring-gray-400 focus:border-gray-400 shadow-sm focus:shadow"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Any additional details for your request"
+            placeholder="Any additional details or questions for your request"
           />
         </div>
 

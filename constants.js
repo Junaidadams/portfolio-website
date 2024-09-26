@@ -464,10 +464,11 @@ export const pricingScheme = [
     key: 1,
     name: "Single page website",
     description:
-      "A single-page website with a navigation bar and footer. Maximum 4 sections.",
+      "A single-page website with a navigation bar and footer. Maximum 5 sections.",
     cost: 2200,
     addOnPageCost: 700,
     addOnPageLimit: 4,
+    basePagesOrSections: 5,
     retainerCost: 500,
     retainerHoursIncluded: 4,
     retainerServicesIncluded: [
@@ -493,8 +494,9 @@ export const pricingScheme = [
     name: "Standard 5 Page website",
     description:
       "A five page website which you can customize to include any of the 5 pages in the options below.",
-    cost: 5000,
+    cost: 4000,
     addOnPageCost: 1000,
+    basePagesOrSections: 5,
     addOnPageLimit: 15,
     retainerCost: 800,
     retainerHoursIncluded: 8,

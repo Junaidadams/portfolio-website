@@ -33,17 +33,20 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-4">
-      <h2 className="text-xl font-bold mb-4">Contact Us</h2>
+    <div className=" md:mx-2 p-5 shadow-teal-lg">
+      <h2 className="text-gray-700 font-bold text-2xl">Contact Me</h2>
       <form onSubmit={handleSendEmail} className="space-y-4">
         {/* Name field */}
-        <div>
-          <label htmlFor="name" className="block font-semibold mb-2">
+        <div className="space-y-3">
+          <label
+            htmlFor="name"
+            className="w-full  text-teal-900 mx-auto text-lg md:text-xl font-montserrat "
+          >
             Name
           </label>
           <input
             id="name"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded focus:outline-none focus:ring-gray-400 focus:border-gray-400 shadow-sm focus:shadow"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -52,13 +55,16 @@ const ContactForm = () => {
         </div>
 
         {/* Contact Email field */}
-        <div>
-          <label htmlFor="contactEmail" className="block font-semibold mb-2">
+        <div className="space-y-3">
+          <label
+            htmlFor="contactEmail"
+            className="w-full  text-teal-900 mx-auto text-lg md:text-xl font-montserrat "
+          >
             Contact Email
           </label>
           <input
             id="contactEmail"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded focus:outline-none focus:ring-gray-400 focus:border-gray-400 shadow-sm focus:shadow"
             type="email"
             value={contactEmail}
             onChange={(e) => setContactEmail(e.target.value)}
@@ -67,13 +73,16 @@ const ContactForm = () => {
         </div>
 
         {/* Message field */}
-        <div>
-          <label htmlFor="message" className="block font-semibold mb-2">
+        <div className="space-y-3">
+          <label
+            htmlFor="message"
+            className="w-full  text-teal-900 mx-auto text-lg md:text-xl font-montserrat "
+          >
             Message
           </label>
           <textarea
             id="message"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded focus:outline-none focus:ring-gray-400 focus:border-gray-400 shadow-sm focus:shadow"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
