@@ -6,7 +6,7 @@ const Pricing = () => {
     <div className=" h-full p-4 flex flex-col md:flex-row m-auto">
       {pricingScheme.map((data) => (
         <div
-          className=" shadow-teal-lg font rounded my-2 md:my-0 md:mx-2 p-5"
+          className="md:w-1/2 shadow-teal-lg font rounded my-2 md:my-0 md:mx-2 p-5"
           key={data.key}
         >
           <div className="border-b-2 pb-4 space-y-4 border-teal-600">

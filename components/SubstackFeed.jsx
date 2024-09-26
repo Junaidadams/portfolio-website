@@ -10,7 +10,7 @@ export const SubstackFeed = () => {
     // Configure the Substack Feed Widget
     window.SubstackFeedWidget = {
       substackUrl: "junaidadams.substack.com", // Replace with your Substack URL
-      posts: 3, // Number of posts to display
+      posts: 2, // Number of posts to display
       colors: {
         primary: "#ea580c", // Customize colors
         secondary: "#222222",

@@ -112,7 +112,7 @@ const Home = () => {
             }}
             className="w-fit flex flex-col p-4 md:flex-row space-y-4 lg:space-y-0 space-x-0 lg:space-x-8"
           >
-            <div className="w-1/2">
+            <div className="md:w-1/2">
               <QuoteForm />
             </div>
 
@@ -123,7 +123,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="w-1/2">
+            <div className="md:w-1/2">
               <ContactForm />
             </div>
           </motion.div>

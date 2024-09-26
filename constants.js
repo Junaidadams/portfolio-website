@@ -18,6 +18,7 @@ import {
   Pointer,
   FormInput,
   InfoIcon,
+  Code,
 } from "lucide-react";
 
 import capybaraImage from "/favourites/capybara.png";
@@ -372,9 +373,9 @@ export const backendTechnologies = [
 
 export const navbarConstants1 = [
   {
-    href: "#",
-    label: "Home",
-    icon: Lamp,
+    href: "/",
+    label: "Services",
+    icon: Code,
   },
   {
     href: "#about",
@@ -399,19 +400,18 @@ export const navbarConstants1 = [
 ];
 
 export const navbarConstants2 = [
-  { label: "Home", href: "#", icon: Lamp },
   { label: "Info", href: "#information", icon: InfoIcon },
   { label: "Pricing", href: "#pricing", icon: DollarSignIcon },
-  { label: "Quote", href: "#quote", icon: FormInput },
+  { label: "Contact", href: "#contact", icon: FormInput },
   { label: "Portfolio", href: "/portfolio", icon: Palette },
 ];
 
 export const footerConstants1 = [
-  { name: "Home", href: "/" },
   { name: "Contact", href: "#contact" },
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
   { name: "Technologies", href: "#technologies" },
+  { name: "Technologies", href: "/" },
   // {
   //   name: LinkedinIcon,
   //   href: "https://www.linkedin.com//",
@@ -419,8 +419,10 @@ export const footerConstants1 = [
 ];
 
 export const footerConstants2 = [
-  { name: "Home", href: "/" },
+  { name: "Info", href: "#information" },
   { name: "Pricing", href: "#pricing" },
+  { name: "Contact", href: "#contact" },
+  { name: "Portfolio", href: "/portfolio" },
 
   // {
   //   name: LinkedinIcon,

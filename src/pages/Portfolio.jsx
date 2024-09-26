@@ -219,7 +219,7 @@ export default function Portfolio() {
           <h2 className="text-4xl font-poppins my-10 text-[#26292b] font-black">
             My Newsletter &quot;npm run dev&quot;
           </h2>
-          <p className="lg:text-2xl mb-8 font-poppins text-2xl text-[#333]">
+          <p className="lg:text-2xl mb-8 font-poppins text-2xl text-[#444]">
             I have a free weekly newsletter on{" "}
             <a href="https://substack.com/home" className="text-orange-600">
               Substack
