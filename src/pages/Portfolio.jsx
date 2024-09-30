@@ -17,27 +17,29 @@ export default function Portfolio() {
     <main className="min-h-screen w-full z-0 overflow-hidden flex flex-col bg-[#f5f5f5f5] -mt-16">
       <section
         id="welcome"
-        className="grid h-screen place-content-center gap-2 px-8 bg-gradient-to-r from-cyan-700 to-cyan-800"
+        className="grid h-screen place-content-center gap-2 px-8 bg-gradient-conic from-cyan-700 to-cyan-800"
       >
-        <div className="flex flex-row">
-          <p
-            style={{ transform: "rotate(-5deg)" }}
-            className="text-white pr-2 font-dancing text-3xl tracking-wider"
-          >
-            (Hover)
-          </p>
-          <Redo
-            className="mt-auto animate-pulse"
-            color="white"
-            size={29}
-            strokeWidth={3}
-            style={{ transform: "rotate(45deg)" }}
-          />
-        </div>
-        <FlipLink subText="my">Junaid&apos;s</FlipLink>
-        <FlipLink subText="Design">full-stack</FlipLink>
-        <div className="">
-          <FlipLink subText="showcase.">Portfolio.</FlipLink>
+        <div className=" backdrop-blur-lg p-5">
+          <div className="flex flex-row">
+            <p
+              style={{ transform: "rotate(-5deg)" }}
+              className="text-white pr-2 font-dancing text-3xl tracking-wider"
+            >
+              (Hover)
+            </p>
+            <Redo
+              className="mt-auto animate-pulse"
+              color="white"
+              size={29}
+              strokeWidth={3}
+              style={{ transform: "rotate(45deg)" }}
+            />
+          </div>
+          <FlipLink subText="my">Junaid&apos;s</FlipLink>
+          <FlipLink subText="Design">full-stack</FlipLink>
+          <div className="">
+            <FlipLink subText="showcase.">Portfolio.</FlipLink>
+          </div>
         </div>
       </section>
       <section
@@ -129,7 +131,7 @@ export default function Portfolio() {
             achieve different goals and constantly expanding my understanding.
           </p>
         </motion.div>{" "}
-        <div className="2xl:w-2/5 w-full lg:h-screen mx-auto justify-center flex flex-col">
+        <div className="2xl:w-2/5 w-4/5 sm:w-3/5 lg:h-screen mx-auto justify-center flex flex-col">
           <ProjectTile />
         </div>
       </section>

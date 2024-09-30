@@ -6,7 +6,6 @@ import nikeImage from "./src/projects/nike.png";
 import newsletterclubImage from "./src/projects/newsletterclub.png";
 
 import {
-  Lamp,
   BookOpenText,
   Hammer,
   Cpu,
@@ -373,11 +372,6 @@ export const backendTechnologies = [
 
 export const navbarConstants1 = [
   {
-    href: "/",
-    label: "Services",
-    icon: Code,
-  },
-  {
     href: "#about",
     label: "About Me",
     icon: BookOpenText,
@@ -397,6 +391,11 @@ export const navbarConstants1 = [
     label: "Contact Me",
     icon: Phone,
   },
+  {
+    href: "/",
+    label: "Services",
+    icon: Code,
+  },
 ];
 
 export const navbarConstants2 = [
@@ -411,7 +410,7 @@ export const footerConstants1 = [
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
   { name: "Technologies", href: "#technologies" },
-  { name: "Technologies", href: "/" },
+  { name: "Services", href: "/" },
   // {
   //   name: LinkedinIcon,
   //   href: "https://www.linkedin.com//",

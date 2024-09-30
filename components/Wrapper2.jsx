@@ -6,7 +6,11 @@ import { navbarConstants2, footerConstants2 } from "../constants";
 const Wrapper = ({ children }) => {
   return (
     <div>
-      <Navbar scrollPercentageSwitch={25} navbarConstants={navbarConstants2} />
+      <Navbar
+        bgColorMobile="bg-gradient-radial from-teal-700 to-teal-800"
+        scrollPercentageSwitch={25}
+        navbarConstants={navbarConstants2}
+      />
       {children}
       <Footer
         color="bg-gradient-to-tr from-teal-700 to-teal-400"

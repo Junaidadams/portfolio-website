@@ -8,7 +8,7 @@ const Steps = () => {
   return (
     <div className="h-full w-full p-3 md:p-4 flex flex-col m-auto">
       {steps.map((step) => (
-        <div key={step.key} className="w-full">
+        <div key={step.key} className="w-full backdrop-blur-3xl">
           <motion.div
             className="flex md:p-4 hover:cursor-pointer my-2 flex-col sm:flex-row"
             onHoverStart={() => setHoveredKey(step.key)} // Set the hovered key

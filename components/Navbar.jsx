@@ -4,7 +4,7 @@ import { X, MoreVertical } from "lucide-react";
 
 import PropTypes from "prop-types";
 
-const Navbar = ({ navbarConstants, scrollPercentageSwitch }) => {
+const Navbar = ({ navbarConstants, scrollPercentageSwitch, bgColorMobile }) => {
   const [toggle, setToggle] = useState(false);
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
@@ -50,7 +50,7 @@ const Navbar = ({ navbarConstants, scrollPercentageSwitch }) => {
           initial={{ opacity: 1, x: "-100%" }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="bg-cyan-900 md:hidden w-3/4 p-0 flex absolute inset-y-0 left-0 flex-col ab min-h-screen z-40"
+          className={`${bgColorMobile} md:hidden w-3/4 p-0 flex absolute inset-y-0 left-0 flex-col ab min-h-screen z-40`}
         >
           <div className="md:hidden w-full text-textmain hover:cursor-pointer flex flex-row-reverse">
             <div
@@ -119,6 +119,7 @@ const Navbar = ({ navbarConstants, scrollPercentageSwitch }) => {
 Navbar.propTypes = {
   navbarConstants: PropTypes.array.isRequired,
   scrollPercentageSwitch: PropTypes.number.isRequired,
+  bgColorMobile: PropTypes.string.isRequired,
 };
 
 export default Navbar;
