@@ -9,7 +9,7 @@ export const Testimonial = () => {
           transition={easeInOut}
           whileHover={{ scale: 1.02 }}
           key={index}
-          className="bg-[#164e632c] bg-texture-1  sm:my-6 my-4 mx-auto w-full py-4 px-6 sm:py-8 sm:px-10 rounded-3xl shadow-3xl"
+          className="bg-[#164e632c] bg-texture-1  sm:my-6 my-4 mx-auto w-full py-4 px-6 sm:py-8 sm:px-10 rounded-3xl shadow-2xl"
         >
           <div className="flex flex-col sm:flex-row">
             <div className="flex justify-center items-center w-fit h-fit p-1 bg-black mr-2 rounded-full my-auto shadow-2xl">

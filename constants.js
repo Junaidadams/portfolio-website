@@ -372,22 +372,22 @@ export const backendTechnologies = [
 
 export const navbarConstants1 = [
   {
-    href: "#about",
+    href: "/portfolio/#about",
     label: "About Me",
     icon: BookOpenText,
   },
   {
-    href: "#projects",
+    href: "/portfolio/#projects",
     label: "My Projects",
     icon: Hammer,
   },
   {
-    href: "#technologies",
+    href: "/portfolio/#technologies",
     label: "What I Use",
     icon: Cpu,
   },
   {
-    href: "#contact",
+    href: "/portfolio/#contact",
     label: "Contact Me",
     icon: Phone,
   },
@@ -432,6 +432,15 @@ export const footerConstants2 = [
 export const testimonials = [
   {
     testimonial:
+      "Working with Junaid has been a delight. His excellent communication and client engagement skills coupled with sound technical knowledge and eye for design makes him a very rare commodity in the development world. I would definitely work with him for future projects",
+    name: "Eesa Seedat",
+    designation: "Client",
+    company: "The Newsletter Club",
+    companyLink: "https://thenewsletterclub.co/",
+    image: "https://thenewsletterclub.co/logo.png",
+  },
+  {
+    testimonial:
       "Junaid was one of my best students; he is creative, ambitious, and was very easy to work with.",
     name: "Hudson Le Feuvre-Smith",
     designation: "Tutor",
@@ -449,15 +458,15 @@ export const testimonials = [
     companyLink: "https://www.yuppiechef.com/",
     image: "https://upload.wikimedia.org/wikipedia/en/e/e1/Yuppiechef_Logo.png",
   },
-  {
-    testimonial:
-      "From company survey - He teaches me new things everyday and is so patient and wise. He doesn't complain at all and always insists on going the extra mile.",
-    name: "Anonymous",
-    designation: "Store Team Member",
-    company: "Yuppiechef",
-    companyLink: "https://www.yuppiechef.com/",
-    image: "https://upload.wikimedia.org/wikipedia/en/e/e1/Yuppiechef_Logo.png",
-  },
+  // {
+  //   testimonial:
+  //     "From company survey - He teaches me new things everyday and is so patient and wise. He doesn't complain at all and always insists on going the extra mile.",
+  //   name: "Anonymous",
+  //   designation: "Store Team Member",
+  //   company: "Yuppiechef",
+  //   companyLink: "https://www.yuppiechef.com/",
+  //   image: "https://upload.wikimedia.org/wikipedia/en/e/e1/Yuppiechef_Logo.png",
+  // },
 ];
 
 export const pricingScheme = [
@@ -467,6 +476,7 @@ export const pricingScheme = [
     description:
       "A single-page website with a navigation bar and footer. Maximum 5 sections.",
     cost: 2200,
+    saleCost: 1999,
     addOnPageCost: 700,
     addOnPageLimit: 4,
     basePagesOrSections: 5,
@@ -496,6 +506,7 @@ export const pricingScheme = [
     description:
       "A five page website which you can customize to include any of the 5 pages in the options below.",
     cost: 4000,
+    saleCost: 3499,
     addOnPageCost: 1000,
     basePagesOrSections: 5,
     addOnPageLimit: 15,

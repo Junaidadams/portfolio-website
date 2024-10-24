@@ -11,12 +11,28 @@ const Pricing = () => {
         >
           <div className="border-b-2 pb-4 space-y-4 border-teal-600">
             <h1 className="text-gray-700 font-bold text-2xl">{data.name}</h1>
-            <p>
-              <span className="text-teal-800 text-2xl font-black">
-                R{data.cost}
-              </span>{" "}
-              once off
-            </p>
+            <div>
+              <p>
+                {data.saleCost < data.cost ? (
+                  <div className="">
+                    <strike className="text-gray-900 text-2xl font-black">
+                      R{data.cost}
+                    </strike>{" "}
+                    <span className="text-teal-800 text-2xl font-black">
+                      R{data.saleCost}
+                    </span>{" "}
+                    <span> once off</span>
+                  </div>
+                ) : (
+                  <p>
+                    <span className="text-teal-800 text-2xl font-black">
+                      R{data.cost}
+                    </span>{" "}
+                    once off
+                  </p>
+                )}
+              </p>
+            </div>
             <p className="sm:text-lg">{data.description}</p>
             {data.pageOptions.length > 0 && (
               <ToggleMenu

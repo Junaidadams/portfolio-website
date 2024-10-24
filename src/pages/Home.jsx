@@ -3,9 +3,6 @@ import { motion } from "framer-motion";
 import FlipLink from "../../components/FlipLink";
 import Pricing from "../../components/Pricing";
 import Steps from "../../components/Steps";
-import QuoteForm from "../../components/QuoteForm";
-import ContactForm from "../../components/ContactForm";
-import { ContactTiles } from "../../components/ContactTiles";
 
 const Home = () => {
   // eslint-disable-next-line no-unused-vars
@@ -81,6 +78,9 @@ const Home = () => {
           <h1 className="text-5xl font-black font-san uppercase sm:text-7xl  md:text-8xl  my-5 bg-gradient-to-t from-teal-700 to-teal-800 text-transparent bg-clip-text shadow- text-center p-2">
             Pricing
           </h1>
+          <p className="text-gray-700 my-5 text-center">
+            Prices valid until 31st October
+          </p>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
