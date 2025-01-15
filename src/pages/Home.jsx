@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import FlipLink from "../../components/FlipLink";
 import Pricing from "../../components/Pricing";
 import Steps from "../../components/Steps";
+import ContactForm from "../../components/ContactForm";
+import QuoteForm from "../../components/QuoteForm";
 
 const Home = () => {
   // eslint-disable-next-line no-unused-vars
@@ -149,7 +151,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* <section
+      <section
         id="contact"
         className="min-h-screen flex flex-col bg-gradient-to-br from-teal-700 to-teal-400"
       >
@@ -182,7 +184,7 @@ const Home = () => {
             </div>
           </motion.div>
         </div>
-      </section> */}
+      </section>
     </div>
   );
 };

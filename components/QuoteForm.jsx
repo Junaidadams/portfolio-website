@@ -1,74 +1,76 @@
 import { useState } from "react";
-import emailjs from "emailjs-com";
-import { pricingScheme } from "../constants"; // Import the pricing scheme array
+import { pricingScheme } from "../constants";
+import axios from "axios";
 
 const QuoteForm = () => {
-  const [selectedPackage, setSelectedPackage] = useState("");
-  const [selectedPages, setSelectedPages] = useState([]);
-  const [message, setMessage] = useState("");
-  const [includeRetainer, setIncludeRetainer] = useState(false); // New state for retainer
+  const [formData, setFormData] = useState({
+    selectedPackage: "",
+    selectedPages: [],
+    message: "",
+    includeRetainer: false,
+  });
 
-  const handleSendEmail = (e) => {
+  const handleSendEmail = async (e) => {
     e.preventDefault();
+    console.log(formData);
 
-    const templateParams = {
-      selected_package: selectedPackage,
-      selected_pages: selectedPages.join(", "),
-      include_retainer: includeRetainer ? "Yes" : "No", // Include retainer option
-      message,
-    };
-
-    emailjs
-      .send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
-        templateParams,
-        "YOUR_USER_ID" // Replace with your EmailJS user ID
-      )
-      .then(
-        (result) => {
-          alert("Quote sent successfully!" + result);
-        },
-        (error) => {
-          alert("An error occurred. Please try again." + error);
-        }
+    try {
+      const response = await axios.post(
+        "http://localhost:8800/api/mail/service-email",
+        { formData }
       );
-  };
-
-  const handlePageSelection = (e) => {
-    const selectedOptions = Array.from(
-      e.target.selectedOptions,
-      (option) => option.value
-    );
-    const maxPages =
-      pricingScheme.find((scheme) => scheme.name === selectedPackage)
-        ?.addOnPageLimit || Infinity;
-
-    if (selectedOptions.length > maxPages) {
-      alert(`You can only select up to ${maxPages} pages for this package.`);
-      return;
+      console.log("Mail sent successfully", response.data);
+    } catch (error) {
+      console.error("Failed to send mail", error);
     }
-
-    setSelectedPages(selectedOptions);
   };
+
+  const handlePageSelection = (index, value) => {
+    const newSelectedPages = [...formData.selectedPages];
+    newSelectedPages[index] = value;
+    setFormData((prevData) => ({
+      ...prevData,
+      selectedPages: newSelectedPages,
+    }));
+  };
+
+  const handlePackageChange = (e) => {
+    const selectedPackageName = e.target.value;
+    const defaultPages =
+      selectedPackageName === "Single page website"
+        ? ["Home", "About", "Contact", "Faq", "Services"]
+        : ["Home", "About", "Contact", "Faq", "Projects"];
+
+    setFormData((prevData) => ({
+      ...prevData,
+      selectedPackage: selectedPackageName,
+      selectedPages: defaultPages,
+    }));
+  };
+
+  const currentPackage = pricingScheme.find(
+    (scheme) => scheme.name === formData.selectedPackage
+  );
+
+  const pageOptions = currentPackage?.pageOptions || [];
 
   return (
-    <div className=" md:mx-2 p-5 shadow-teal-lg">
+    <div className="md:mx-2 p-5 shadow-teal-lg">
       <form onSubmit={handleSendEmail} className="space-y-4">
-        {/* Dropdown for selecting a package */}
         <h2 className="text-gray-700 font-bold text-2xl">Get Quoted</h2>
+
         <div className="space-y-3">
           <label
             htmlFor="package"
-            className="w-full  text-teal-900 mx-auto text-lg md:text-xl font-montserrat "
+            className="text-teal-900 mx-auto text-lg font-montserrat"
           >
             Select a Package
           </label>
           <select
             id="package"
-            className="w-full p-2 border rounded focus:outline-none focus:ring-gray-400 focus:border-gray-400 shadow-sm focus:shadow"
-            value={selectedPackage}
-            onChange={(e) => setSelectedPackage(e.target.value)}
+            className="w-full p-2 border rounded shadow-sm"
+            value={formData.selectedPackage}
+            onChange={handlePackageChange}
             required
           >
             <option value="" disabled>
@@ -82,66 +84,36 @@ const QuoteForm = () => {
           </select>
         </div>
 
-        {/* Dropdown for selecting pages */}
-        <div className="space-y-3">
-          <div>
-            <label
-              htmlFor="pages"
-              className="w-full  text-teal-900 mx-auto text-lg md:text-xl font-montserrat "
-            >
-              Select{" "}
-              {pricingScheme.find(
-                (scheme) => scheme.name === selectedPackage && scheme.key === 1
-              )
-                ? "sections"
-                : "pages"}{" "}
+        {formData.selectedPackage && (
+          <div className="space-y-3">
+            <label className="text-teal-900 text-lg font-montserrat">
+              Select Pages
             </label>
-            <div>
-              <p className="pb-1 font-montserrat ">
-                {" "}
-                (Ctrl + Click for multiple)
-              </p>
-              <p className="pb-1 font-montserrat animate-pulse">
-                {(() => {
-                  const scheme = pricingScheme.find(
-                    (scheme) =>
-                      scheme.name === selectedPackage && scheme.key === 1
-                  );
-                  return scheme
-                    ? `Choose up to ${scheme.basePagesOrSections} sections, add up to ${scheme.addOnPageLimit} pages at R${scheme.addOnPageCost}/page by including it in the additional details`
-                    : `Choose up to ${
-                        pricingScheme.find(
-                          (scheme) => scheme.name === selectedPackage
-                        )?.basePagesOrSections
-                      } pages, additional pages are charged at R${
-                        pricingScheme.find(
-                          (scheme) => scheme.name === selectedPackage
-                        )?.addOnPageCost
-                      }`;
-                })()}
-              </p>
-            </div>
+            {[...Array(currentPackage.basePagesOrSections)].map((_, index) => (
+              <select
+                key={index}
+                className="w-full p-2 border rounded mb-2 shadow-sm"
+                value={formData.selectedPages[index] || ""}
+                onChange={(e) => handlePageSelection(index, e.target.value)}
+                required
+              >
+                {pageOptions
+                  .filter(
+                    (page) =>
+                      !formData.selectedPages.includes(page) ||
+                      formData.selectedPages[index] === page
+                  )
+                  .map((page, i) => (
+                    <option key={i} value={page}>
+                      {page}
+                    </option>
+                  ))}
+              </select>
+            ))}
           </div>
-          <select
-            id="pages"
-            className="w-full p-2 border rounded focus:outline-none focus:ring-gray-400 focus:border-gray-400 shadow-sm focus:shadow"
-            multiple
-            value={selectedPages}
-            onChange={handlePageSelection} // Updated handler
-            required
-          >
-            {pricingScheme
-              .find((scheme) => scheme.name === selectedPackage)
-              ?.pageOptions.map((page, index) => (
-                <option key={index} value={page}>
-                  {page}
-                </option>
-              ))}
-          </select>
-        </div>
+        )}
 
-        {/* Retainer checkbox with monthly cost */}
-        {selectedPackage && (
+        {formData.selectedPackage && (
           <div>
             <label
               htmlFor="retainerPackage"
@@ -151,35 +123,36 @@ const QuoteForm = () => {
                 id="retainerPackage"
                 type="checkbox"
                 className="mr-2"
-                checked={includeRetainer}
-                onChange={(e) => setIncludeRetainer(e.target.checked)}
+                checked={formData.includeRetainer}
+                onChange={(e) =>
+                  setFormData((prevData) => ({
+                    ...prevData,
+                    includeRetainer: e.target.checked,
+                  }))
+                }
               />
-              Include Retainer Service (R
-              {
-                pricingScheme.find((scheme) => scheme.name === selectedPackage)
-                  ?.retainerCost
-              }
-              /month)
+              Include Retainer Service (R{currentPackage.retainerCost}/month)
             </label>
           </div>
         )}
 
-        {/* Optional message field */}
         <div className="space-y-3">
-          <div>
-            <label
-              htmlFor="message"
-              className="w-full  text-teal-900 mx-auto text-lg md:text-xl font-montserrat "
-            >
-              Additional Details
-            </label>
-            <p className="pb-1 font-montserrat "> (add extra pages here)</p>
-          </div>
+          <label
+            htmlFor="message"
+            className="text-teal-900 text-lg font-montserrat"
+          >
+            Additional Details
+          </label>
           <textarea
             id="message"
-            className="w-full p-2 border rounded focus:outline-none focus:ring-gray-400 focus:border-gray-400 shadow-sm focus:shadow"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            className="w-full p-2 border rounded shadow-sm"
+            value={formData.message}
+            onChange={(e) =>
+              setFormData((prevData) => ({
+                ...prevData,
+                message: e.target.value,
+              }))
+            }
             placeholder="Any additional details or questions for your request"
           />
         </div>
