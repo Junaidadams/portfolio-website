@@ -13,7 +13,7 @@ const Wrapper = ({ children }) => {
       />
       {children}
       <Footer
-        color="bg-gradient-to-tr from-teal-700 to-teal-400"
+        color="bg-teal-700"
         textColor="#f5f5f5"
         footerConstants={footerConstants2}
       />

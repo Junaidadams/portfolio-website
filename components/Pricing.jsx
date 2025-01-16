@@ -12,7 +12,7 @@ const Pricing = () => {
           <div className="border-b-2 pb-4 space-y-4 border-teal-600">
             <h1 className="text-gray-700 font-bold text-2xl">{data.name}</h1>
             <div>
-              <p>
+              <div>
                 {data.saleCost < data.cost ? (
                   <div className="">
                     <strike className="text-gray-900 text-2xl font-black">
@@ -31,9 +31,9 @@ const Pricing = () => {
                     once off
                   </p>
                 )}
-              </p>
+              </div>
             </div>
-            <p className="sm:text-lg">{data.description}</p>
+            <div className="sm:text-lg">{data.description}</div>
             {data.pageOptions.length > 0 && (
               <ToggleMenu
                 menuItems={data.pageOptions}

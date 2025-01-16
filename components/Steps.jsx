@@ -25,7 +25,7 @@ const Steps = () => {
             >
               <step.icon size={60} strokeWidth={1} color="#333" />
             </motion.div>
-            <div className="w-full md:w-1/3 mr-auto">
+            <div className="w-full md:w-1/2 mr-auto">
               <h1 className="w-full text-center text-teal-900 mx-auto text-lg md:text-xl font-montserrat font-bold">
                 {step.name}
               </h1>
