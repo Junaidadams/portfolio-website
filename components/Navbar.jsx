@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { X, MoreVertical } from "lucide-react";
+import { HashLink as Link } from "react-router-hash-link";
 
 import PropTypes from "prop-types";
 
@@ -18,14 +19,12 @@ const Navbar = ({ navbarConstants, scrollPercentageSwitch, bgColorMobile }) => {
       setScrollPercentage(percentage);
     };
 
-    // Add event listener when component mounts
     window.addEventListener("scroll", handleScroll);
 
-    // Remove event listener when component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // Dependency array is empty to ensure the effect runs only once
+  }, []);
 
   useEffect(() => {
     if (toggle) {
@@ -50,7 +49,7 @@ const Navbar = ({ navbarConstants, scrollPercentageSwitch, bgColorMobile }) => {
           initial={{ opacity: 1, x: "-100%" }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className={`${bgColorMobile} md:hidden w-3/4 p-0 flex absolute inset-y-0 left-0 flex-col ab min-h-screen z-40`}
+          className={`${bgColorMobile} md:hidden w-3/4 p-0 flex absolute inset-y-0 left-0 flex-col min-h-screen z-40`}
         >
           <div className="md:hidden w-full text-textmain hover:cursor-pointer flex flex-row-reverse">
             <div
@@ -62,27 +61,28 @@ const Navbar = ({ navbarConstants, scrollPercentageSwitch, bgColorMobile }) => {
           </div>
 
           {/* MOBILE NAV MENU */}
-
           <ul className="flex text-[#f5f5f5] flex-col h-full mr-auto ml-4 sm:ml-20">
             {navbarConstants.map((item, index) => (
               <li
                 key={index}
                 className="text-center shadow-sm hover:text-[#f5f5f5b3]"
               >
-                <a href={item.href} onClick={() => setToggle(!toggle)}>
+                <Link to={item.to} onClick={() => setToggle(!toggle)}>
                   <div className="text-2xl border-b-[1px] p-8 border-[#fff] flex-row flex antialiased cursor-pointer">
                     <item.icon className="my-auto mr-6" />
                     {item.label}
                   </div>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </motion.div>
       )}
+
       <a href="/">
         <div className="flex flex-row p-4"></div>
       </a>
+
       <div className="flex flex-row p-2">
         {!toggle && (
           <div
@@ -90,13 +90,15 @@ const Navbar = ({ navbarConstants, scrollPercentageSwitch, bgColorMobile }) => {
               scrollPercentage > scrollPercentageSwitch
                 ? "text-[#000000]"
                 : "text-[#f5f5f5]"
-            } hover:cursor-pointer p-3  rounded-full`}
+            } hover:cursor-pointer p-3 rounded-full`}
             onClick={() => setToggle(!toggle)}
           >
             <MoreVertical />
           </div>
         )}
       </div>
+
+      {/* DESKTOP NAV MENU */}
       <ul
         className={`${
           scrollPercentage > scrollPercentageSwitch
@@ -106,9 +108,9 @@ const Navbar = ({ navbarConstants, scrollPercentageSwitch, bgColorMobile }) => {
       >
         {navbarConstants.map((item, index) => (
           <li key={index}>
-            <a href={item.href}>
+            <Link to={item.to}>
               <div className="antialiased cursor-pointer">{item.label}</div>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

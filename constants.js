@@ -175,7 +175,7 @@ export const projects = [
     key: "2",
     name: "Trident Distributions",
     shortDesc:
-      "A beautifully designed e-commerce website with account creation and a persistant local storage cart system.",
+      "A beautifully designed e-commerce website with account creation and a persistent local storage cart system.",
     longDesc:
       "A streamlined e-commerce site with account creation and a persistent local storage cart system was created using Next.js, Tailwind CSS, and Sanity.io. Next.js optimizes performance, Tailwind CSS improves visual aesthetics, and Sanity.io provides a reliable content management system for smooth backend operations.",
     img: tridentImage,
@@ -202,7 +202,7 @@ export const projects = [
     key: "4",
     name: "Junaid Adams - Past Portfolio",
     shortDesc:
-      "A previous version of my portfolio. Modern asthetics with a softer, personal touch.",
+      "A previous version of my portfolio. Modern aesthetics with a softer, personal touch.",
     longDesc:
       "A past version of my portfolio, distinguished by its modern aesthetics and infused with a softer, more personal touch, was crafted to reflect a balance between contemporary design elements. The deliberate incorporation of a personal touch aimed to create a unique and inviting online presence, catering to a visually appealing and engaging user experience.",
     img: junaidImage,
@@ -232,7 +232,7 @@ export const projects = [
     shortDesc:
       "A sleek Nike mock website made using Vite, with a mobile-first responsive design.",
     longDesc:
-      "A sleek Nike mock website website made using Vite showcasing responsive design. This project was built during my time at School of IT and tought me what goes into making real-world product pages.",
+      "A sleek Nike mock website website made using Vite showcasing responsive design. This project was built during my time at School of IT and taught me what goes into making real-world product pages.",
     img: nikeImage,
     bgColor: "#fff",
     link: "",
@@ -385,44 +385,44 @@ export const backendTechnologies = [
 
 export const navbarConstants1 = [
   {
-    href: "/portfolio/#about",
+    to: "/portfolio#about",
     label: "About Me",
     icon: BookOpenText,
   },
   {
-    href: "/portfolio/#projects",
+    to: "/portfolio#projects",
     label: "My Projects",
     icon: Hammer,
   },
   {
-    href: "/portfolio/#technologies",
+    to: "/portfolio#technologies",
     label: "What I Use",
     icon: Cpu,
   },
   {
-    href: "/portfolio/#contact",
+    to: "/portfolio#contact",
     label: "Contact Me",
     icon: Phone,
   },
   {
-    href: "/",
+    to: "/",
     label: "Services",
     icon: Code,
   },
 ];
 
 export const navbarConstants2 = [
-  { label: "Info", href: "#information", icon: InfoIcon },
-  { label: "Pricing", href: "#pricing", icon: DollarSignIcon },
-  { label: "Contact", href: "#contact", icon: FormInput },
-  { label: "Portfolio", href: "/portfolio", icon: Palette },
+  { label: "Info", to: "/#information", icon: InfoIcon },
+  { label: "Pricing", to: "/#pricing", icon: DollarSignIcon },
+  { label: "Contact", to: "/#contact", icon: FormInput },
+  { label: "Portfolio", to: "/portfolio", icon: Palette },
 ];
 
 export const footerConstants1 = [
-  { name: "Contact", href: "#contact" },
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Technologies", href: "#technologies" },
+  { name: "Contact", href: "/portfolio#contact" },
+  { name: "About", href: "/portfolio#about" },
+  { name: "Projects", href: "/portfolio#projects" },
+  { name: "Technologies", href: "/portfolio#technologies" },
   { name: "Services", href: "/" },
   // {
   //   name: LinkedinIcon,
@@ -431,9 +431,9 @@ export const footerConstants1 = [
 ];
 
 export const footerConstants2 = [
-  { name: "Info", href: "#information" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "Contact", href: "#contact" },
+  { name: "Info", href: "/#information" },
+  { name: "Pricing", href: "/#pricing" },
+  { name: "Contact", href: "/#contact" },
   { name: "Portfolio", href: "/portfolio" },
 
   // {
