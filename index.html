@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <base href="/" />
+    <base href="./" />
     <!-- for local host -->
     <link rel="icon" type="image/svg+xml" href="/capy.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,8 +11,5 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    <script>
-      console.log("HTTP_MOD_REWRITE:", '<?= getenv("HTTP_MOD_REWRITE") ?>');
-    </script>
   </body>
 </html>

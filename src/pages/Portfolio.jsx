@@ -1,5 +1,5 @@
 import { easeInOut, motion } from "framer-motion";
-import { ProjectTile } from "../../components/ProjectTile";
+import { ProjectTile2 } from "../../components/ProjectTile2";
 import { TechTiles } from "../../components/TechTiles";
 import { ContactTiles } from "../../components/ContactTiles";
 import { Testimonial } from "../../components/Testimonial";
@@ -132,7 +132,7 @@ export default function Portfolio() {
           </p>
         </motion.div>{" "}
         <div className="2xl:w-2/5 w-4/5 sm:w-3/5 lg:h-screen mx-auto justify-center flex flex-col">
-          <ProjectTile />
+          <ProjectTile2 />
         </div>
       </section>
       <section

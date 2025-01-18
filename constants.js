@@ -239,6 +239,19 @@ export const projects = [
     github: "www.example.com",
     tags: ["Vite", "Tailwind"],
   },
+  // {
+  //   key: "7",
+  //   name: "roob online",
+  //   shortDesc:
+  //     "A cosy, inviting website showcasing the commission pieces made by roob the digital artist.",
+  //   longDesc:
+  //     "A cosy, inviting website showcasing the commission pieces made by roob the digital artist. Complete with it's own CMS and contact form, this website is what I recommend for customers in similar service-related fields",
+  //   img: nikeImage,
+  //   bgColor: "#fff",
+  //   link: "",
+  //   github: "www.example.com",
+  //   tags: ["Vite", "Sanity.io"],
+  // },
 ];
 
 export const frontendTechnologies = [
