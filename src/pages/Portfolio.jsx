@@ -1,5 +1,5 @@
 import { easeInOut, motion } from "framer-motion";
-import { ProjectTile2 } from "../../components/ProjectTile2";
+import { ProjectTile } from "../../components/ProjectTile";
 import { TechTiles } from "../../components/TechTiles";
 import { ContactTiles } from "../../components/ContactTiles";
 import { Testimonial } from "../../components/Testimonial";
@@ -107,7 +107,7 @@ export default function Portfolio() {
       </section>
       <section
         id="projects"
-        className="min-h-screen bg-[#f5f5f5f5] mb-40 md:mb-20 flex flex-col w-full 2xl:w-10/12 mx-auto 2xl:flex-row pb-12"
+        className="min-h-screen bg-[#f5f5f5f5] mb-40 md:mb-20 flex flex-col w-full 2xl:w-10/12 mx-auto pb-12"
       >
         <motion.div
           initial={{ opacity: 0 }}
@@ -131,8 +131,8 @@ export default function Portfolio() {
             achieve different goals and constantly expanding my understanding.
           </p>
         </motion.div>{" "}
-        <div className="2xl:w-2/5 w-4/5 sm:w-3/5 lg:h-screen mx-auto justify-center flex flex-col">
-          <ProjectTile2 />
+        <div className="w-3/4 2xl:w-1/2 lg:px-10 lg:h-screen mx-auto flex flex-col">
+          <ProjectTile />
         </div>
       </section>
       <section

@@ -12,13 +12,13 @@ export const ProjectTile = () => {
 
   return (
     <div className="">
-      <div className="">
+      <div className=" grid grid-cols-1  md:grid-cols-2">
         {projects.map((project) => (
           <motion.div
             key={project.key}
             whileHover={{ x: 12 }}
             onClick={() => setFocused(project)}
-            className="relative hover:cursor-pointer" // Ensure this div is positioned relative to its content
+            className="relative hover:cursor-pointer md:mx-2" // Ensure this div is positioned relative to its content
           >
             {project.img && (
               <div className="bg-gray-800 shadow-lg p-[1px] rounded-sm relative my-2">
