@@ -70,6 +70,7 @@ export const ProjectTile = () => {
               {focused.link && (
                 <a
                   href={focused.link}
+                  target="_blank"
                   className={`absolute top-2 ${
                     focused.github ? "right-[155px]" : "right-20"
                   } text-white text-2xl font-bold bg-black bg-opacity-70 shadow-2xl px-4 py-2 rounded hover:bg-opacity-75`}
@@ -81,6 +82,7 @@ export const ProjectTile = () => {
               {focused.github && (
                 <a
                   href={focused.github}
+                  target="_blank"
                   className="absolute top-2 right-20 text-white text-2xl font-bold bg-black bg-opacity-70 shadow-2xl px-4 py-2 rounded hover:bg-opacity-75"
                 >
                   <FolderGit />

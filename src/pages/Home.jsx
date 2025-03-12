@@ -39,10 +39,10 @@ const Home = () => {
               className=" bg-slate-100 flex space-x-2 md:space-x-8 w-fit px-2 md:px-8 sm:px-4 sm:py-2 rounded-full"
               href="#pricing"
             >
-              <FlipLink subText={"Get "} color={"#555"}>
+              <FlipLink subText={"Get "} color={"#333"}>
                 Get
               </FlipLink>
-              <FlipLink subText={" Started"} color={"#555"}>
+              <FlipLink subText={" Started"} color={"#333"}>
                 Started
               </FlipLink>
             </a>
