@@ -80,7 +80,7 @@ const Home = () => {
             Pricing
           </h1>
           <p className="text-gray-700 my-5 text-center">
-            Prices valid until 31st January
+            Prices valid until 30th April
           </p>
           <motion.div
             initial={{ opacity: 0 }}

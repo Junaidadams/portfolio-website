@@ -3,6 +3,8 @@ import { useState } from "react";
 
 import { motion } from "framer-motion";
 
+import { ExternalLink, X, FolderGit } from "lucide-react";
+
 export const ProjectTile = () => {
   const [focused, setFocused] = useState(null);
 
@@ -11,7 +13,7 @@ export const ProjectTile = () => {
   };
 
   return (
-    <div className="">
+    <div className=" m-auto">
       <div className=" grid grid-cols-1  md:grid-cols-2">
         {projects.map((project) => (
           <motion.div
@@ -65,11 +67,31 @@ export const ProjectTile = () => {
                 className="w-full h-full object-contain rounded"
               />
               {/* Button positioned relative to the image */}
+              {focused.link && (
+                <a
+                  href={focused.link}
+                  className={`absolute top-2 ${
+                    focused.github ? "right-[155px]" : "right-20"
+                  } text-white text-2xl font-bold bg-black bg-opacity-70 shadow-2xl px-4 py-2 rounded hover:bg-opacity-75`}
+                >
+                  <ExternalLink />
+                </a>
+              )}
+
+              {focused.github && (
+                <a
+                  href={focused.github}
+                  className="absolute top-2 right-20 text-white text-2xl font-bold bg-black bg-opacity-70 shadow-2xl px-4 py-2 rounded hover:bg-opacity-75"
+                >
+                  <FolderGit />
+                </a>
+              )}
+
               <button
-                className="absolute top-2 right-2 text-white text-2xl font-bold bg-black bg-opacity-50 px-4 py-2 rounded hover:bg-opacity-75"
+                className="absolute top-2 right-2 text-white text-2xl font-bold bg-black bg-opacity-70 shadow-2xl px-4 py-2 rounded hover:bg-opacity-75"
                 onClick={handleClose}
               >
-                ×
+                <X />
               </button>
             </motion.div>
           </div>

@@ -4,6 +4,7 @@ import oneToTenImage from "./src/projects/1210.png";
 import weatherImage from "./src/projects/weather.png";
 import nikeImage from "./src/projects/nike.png";
 import newsletterclubImage from "./src/projects/newsletterclub.png";
+import roob from "./src/projects/roob.png";
 
 import {
   BookOpenText,
@@ -160,6 +161,19 @@ export const contactInformation = [
 export const projects = [
   {
     key: "1",
+    name: "roob online",
+    shortDesc:
+      "A cosy, inviting website showcasing the commission pieces made by roob the digital artist.",
+    longDesc:
+      "A cosy, inviting website showcasing the commission pieces made by roob the digital artist. Complete with it's own CMS and contact form, this website is what I recommend for customers in  similar service-related fields",
+    img: roob,
+    bgColor: "#fff",
+    link: "https://roob.online/",
+    github: "https://github.com/Junaidadams/roob",
+    tags: ["Vite", "Sanity.io"],
+  },
+  {
+    key: "2",
     name: "The Newsletter Club",
     shortDesc:
       "A full-stack newsletter growth platform, aimed at collaboration between newsletter owners.",
@@ -168,11 +182,11 @@ export const projects = [
     img: newsletterclubImage,
     bgColor: "#7c3aed ",
     link: "https://thenewsletterclub.co",
-    github: "",
+    github: "https://github.com/TheNEwsletterclub/newlsetterclubbackend",
     tags: ["Vite", "Express"],
   },
   {
-    key: "2",
+    key: "3",
     name: "Trident Distributions",
     shortDesc:
       "A beautifully designed e-commerce website with account creation and a persistent local storage cart system.",
@@ -181,11 +195,11 @@ export const projects = [
     img: tridentImage,
     bgColor: "#07080b",
     link: "",
-    github: "www.example.com",
+    github: "",
     tags: ["NextJs", "CMS"],
   },
   {
-    key: "3",
+    key: "4",
     name: "Weather Application",
     shortDesc:
       "A responsive weather web application capable of displaying weather information for an inputted city.",
@@ -195,11 +209,11 @@ export const projects = [
     bgColor: "#a396e9",
 
     link: "https://codesandbox.io/p/sandbox/weather-app-fpv85k",
-    github: "www.example.com",
+    github: "https://github.com/Junaidadams/Weather-App",
     tags: ["Vite", "API"],
   },
   {
-    key: "4",
+    key: "5",
     name: "Junaid Adams - Past Portfolio",
     shortDesc:
       "A previous version of my portfolio. Modern aesthetics with a softer, personal touch.",
@@ -209,11 +223,11 @@ export const projects = [
     bgColor: "#f5f5f5",
 
     link: "",
-    github: "www.example.com",
+    github: "",
     tags: ["Vite", "ThreeJS"],
   },
   {
-    key: "5",
+    key: "6",
     name: "One to Ten",
     shortDesc:
       "A sleek, minimalist quiz game where all answers range from one to ten. Perfect for quick entertainment and challenging your quick-thinking skills!",
@@ -223,11 +237,11 @@ export const projects = [
     bgColor: "#182421",
 
     link: "https://www.1210.co.za",
-    github: "www.example.com",
+    github: "https://github.com/Junaidadams/One-to-Ten",
     tags: ["Vite"],
   },
   {
-    key: "6",
+    key: "7",
     name: "Nike Mock Website",
     shortDesc:
       "A sleek Nike mock website made using Vite, with a mobile-first responsive design.",
@@ -236,7 +250,7 @@ export const projects = [
     img: nikeImage,
     bgColor: "#fff",
     link: "",
-    github: "www.example.com",
+    github: "",
     tags: ["Vite", "Tailwind"],
   },
   // {
@@ -249,7 +263,7 @@ export const projects = [
   //   img: nikeImage,
   //   bgColor: "#fff",
   //   link: "",
-  //   github: "www.example.com",
+  //   github: "",
   //   tags: ["Vite", "Sanity.io"],
   // },
 ];
