@@ -51,10 +51,10 @@ const Home = () => {
       </section>
       <section
         id="information"
-        className="min-h-screen flex flex-col bg-gradient-to-b from-teal-700 to-teal-400"
+        className="min-h-screen flex flex-col bg-gradient-to-b from-teal-700 to-teal-400 dark:from-gray-950 dark:to-gray-950"
       >
-        <div className="m-auto bg-gradient-to-t from-slate-100 to-white md:rounded-lg p-1 sm:p-6 md:p-8 w-[90%] lg:w-3/5 my-10">
-          <h1 className="text-5xl font-black font-san uppercase sm:text-7xl  md:text-8xl  my-5 bg-gradient-to-t from-teal-700 to-teal-800 text-transparent bg-clip-text shadow- text-center p-2">
+        <div className="m-auto bg-gradient-to-t from-slate-100 to-white dark:from-gray-900 dark:to-gray-900 md:rounded-lg p-1 sm:p-6 md:p-8 w-[90%] lg:w-3/5 my-10">
+          <h1 className="text-5xl font-black font-san uppercase sm:text-7xl  md:text-8xl  my-5 bg-gradient-to-t from-teal-700 to-teal-800 dark:from-gray-300 dark:to-gray-100 text-transparent bg-clip-text shadow- text-center p-2">
             Process
           </h1>
           <motion.div
@@ -73,13 +73,13 @@ const Home = () => {
       </section>
       <section
         id="pricing"
-        className="min-h-screen flex flex-col bg-gradient-to-t from-teal-700 to-teal-400"
+        className="min-h-screen flex flex-col bg-gradient-to-t from-teal-700 to-teal-400 dark:from-gray-950 dark:to-gray-950"
       >
-        <div className="m-auto bg-gradient-to-tr from-slate-100 to-white md:rounded-lg p-1 sm:p-6 md:p-8 w-[90%] lg:w-3/5 my-10">
-          <h1 className="text-5xl font-black font-san uppercase sm:text-7xl  md:text-8xl  my-5 bg-gradient-to-t from-teal-700 to-teal-800 text-transparent bg-clip-text shadow- text-center p-2">
+        <div className="m-auto bg-gradient-to-tr from-slate-100 to-white dark:from-gray-900 dark:to-gray-900 md:rounded-lg p-1 sm:p-6 md:p-8 w-[90%] lg:w-3/5 my-10">
+          <h1 className="text-5xl font-black font-san uppercase sm:text-7xl  md:text-8xl my-5 bg-gradient-to-t from-teal-700 to-teal-800 dark:from-gray-300 dark:to-gray-100 text-transparent bg-clip-text shadow- text-center p-2">
             Pricing
           </h1>
-          <p className="text-gray-700 my-5 text-center">
+          <p className="text-gray-700 dark:text-white my-5 text-center">
             Prices valid until 30th April
           </p>
           <motion.div

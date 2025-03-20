@@ -10,18 +10,20 @@ const Pricing = () => {
           key={data.key}
         >
           <div className="border-b-2 pb-4 space-y-4 border-teal-600">
-            <h1 className="text-gray-700 font-bold text-2xl">{data.name}</h1>
+            <h1 className="text-gray-700 dark:text-gray-300 font-bold text-2xl">
+              {data.name}
+            </h1>
             <div>
               <div>
                 {data.saleCost < data.cost ? (
                   <div className="">
-                    <strike className="text-gray-900 text-2xl font-black">
+                    <strike className="text-gray-900 dark:text-gray-400 text-2xl font-black">
                       R{data.cost}
                     </strike>{" "}
-                    <span className="text-teal-800 text-2xl font-black">
-                      R{data.saleCost}
+                    <span className="text-teal-800 dark:text-teal-500 text-2xl font-black">
+                      ->R{data.saleCost}
                     </span>{" "}
-                    <span> once off</span>
+                    <span className="dark:text-gray-300"> once off</span>
                   </div>
                 ) : (
                   <p>
@@ -33,7 +35,9 @@ const Pricing = () => {
                 )}
               </div>
             </div>
-            <div className="sm:text-lg">{data.description}</div>
+            <div className="sm:text-lg dark:text-gray-300">
+              {data.description}
+            </div>
             {data.pageOptions.length > 0 && (
               <ToggleMenu
                 menuItems={data.pageOptions}
@@ -41,21 +45,21 @@ const Pricing = () => {
               />
             )}
             <div className="sm:text-lg">
-              <h3 className="font-bold">Add on pages:</h3>
-              <p>
+              <h3 className="font-bold dark:text-gray-300">Add on pages:</h3>
+              <p className="dark:text-gray-400">
                 {data.addOnPageLimit > 0
                   ? `Up to ${data.addOnPageLimit} @R${data.addOnPageCost}/page`
                   : `No limit @R${data.addOnPageCost}/page`}
               </p>
             </div>
 
-            <div className="space-y-4 sm:text-lg">
+            <div className="space-y-4 sm:text-lg dark:text-gray-300">
               <div>
                 <h1 className="font-bold">
                   <span className="font-black ">Optional</span> monthly retainer
                   service:
                 </h1>
-                <p>
+                <p className="dark:text-gray-400">
                   <span className="font-">
                     <span className="text-teal-500">@</span>R{data.retainerCost}
                   </span>{" "}
